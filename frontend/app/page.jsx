@@ -147,7 +147,6 @@ export default function Home(){return <Motion>
       <p className="kx-tag light"><i/>Our business network</p>
       <ul>{companies.map(([n,d],i)=><li key={n}><span>0{i+1}</span><b>{n}</b><small>{d}</small></li>)}</ul>
     </div>
-    <p className="kx-note kx-devs-note">Developer names are shown as text for reference and are not their official logos. Associated companies retain their own legal identities.</p>
   </section>
 
   <section className="kx-insights kx-wrap">

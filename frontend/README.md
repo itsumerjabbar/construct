@@ -9,9 +9,9 @@ npm install
 npm run dev
 ```
 
-Visit http://localhost:3000. Build with `npm run build`; deploy the generated `out/` directory to a static host. Use `npm start` to preview the production export locally. Run `npm run check` for browser checks (requires Chrome).
+Visit http://localhost:3000. Build with `npm run build`; deploy the generated `out/` directory to a static host. Use `npm start` to preview the production export locally.
 
-Development uses `.next-dev/`; production builds use `.next/` and export to `out/`. These directories must remain separate so a build cannot overwrite a running development server's bundles. With the dev server active, run `node scripts/check-dev.mjs` after a production build to verify this regression.
+Development uses `.next-dev/`; production builds use `.next/` and export to `out/`. These directories must remain separate so a build cannot overwrite a running development server's bundles.
 
 ## Content and components
 

@@ -1,0 +1,1 @@
+{"name":"kea-building-contracting","version":"1.0.0","private":true,"scripts":{"dev":"next dev --hostname 127.0.0.1","build":"next build","start":"node scripts/preview.mjs","check":"node scripts/check.mjs"},"dependencies":{"next":"^15.5.12","react":"^19.1.0","react-dom":"^19.1.0"},"overrides":{"postcss":"^8.5.23"},"devDependencies":{"@playwright/test":"^1.64.0"}}

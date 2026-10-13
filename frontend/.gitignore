@@ -1,0 +1,9 @@
+node_modules/
+.next/
+.next-dev/
+.next-build/
+out/
+*.tar.gz
+.env*
+qa/
+dist/

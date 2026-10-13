@@ -31,7 +31,6 @@ export default function Projects(){return <Motion>
   <section className="kx-wrap kx-portfolio" id="portfolio">
     <KxHead tag="The collection" title="Explore the" italic="possibilities."><p>Filter by sector, then discover the priorities that shape each project.</p></KxHead>
     <ProjectGallery/>
-    <p className="kx-note">Imagery is illustrative. These pages introduce the supplied project locations and work categories; they do not represent verified completion records.</p>
   </section>
 
   <section className="kx-wrap kx-locations" id="locations">

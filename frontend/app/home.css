@@ -276,3 +276,41 @@
   .kx-devs-grid,.kx-network ul{grid-template-columns:1fr}
   .kx-dev{aspect-ratio:auto;min-height:300px}
 }
+
+/* Intro mosaic: villas, mansions, residential, commercial */
+.kx-mosaic{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:0}
+.kx-tile{position:relative;display:block;overflow:hidden;border-radius:24px;aspect-ratio:4/5;box-shadow:0 30px 60px #0b1a1f1f}
+.kx-tile.t0{border-radius:999px 999px 24px 24px}
+.kx-tile.t1,.kx-tile.t3{transform:translateY(60px)}
+.kx-motion .kx-tile.t1.is-in,.kx-motion .kx-tile.t3.is-in{transform:translateY(60px)}
+.kx-tile img{position:absolute;inset:0;transition:transform 1.4s var(--ease)}
+.kx-tile:hover img{transform:scale(1.07)}
+.kx-tile:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,#061217cc,#06121700 50%)}
+.kx-tile-label{position:absolute;z-index:2;left:14px;right:14px;bottom:14px;display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:16px;background:#ffffff1f;border:1px solid #ffffff38;-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);color:#fff;font-family:var(--display);font-size:clamp(17px,1.4vw,21px);line-height:1.15}
+.kx-tile-label small{font-family:var(--kx-sans),sans-serif;font-size:10px;letter-spacing:.2em;color:var(--gold-l)}
+.kx-tile-label b{margin-left:auto;width:30px;height:30px;flex:none;border-radius:50%;background:var(--gold-l);color:var(--night);display:grid;place-items:center;font:400 15px var(--kx-sans),sans-serif;transition:transform .5s var(--ease)}
+.kx-tile:hover .kx-tile-label b{transform:rotate(-45deg)}
+.kx-intro-grid:has(.kx-mosaic){padding-bottom:60px}
+@media(max-width:1100px){.kx-mosaic{max-width:640px}}
+@media(max-width:560px){.kx-mosaic{gap:10px}.kx-tile.t1,.kx-tile.t3,.kx-motion .kx-tile.t1.is-in,.kx-motion .kx-tile.t3.is-in{transform:translateY(34px)}.kx-tile-label{left:8px;right:8px;bottom:8px;padding:9px 10px;font-size:14px;gap:6px}.kx-tile-label small{display:none}.kx-tile-label b{width:24px;height:24px;font-size:12px}}
+
+/* KEA in numbers */
+.kx-numbers{position:relative;overflow:hidden;background:var(--night);color:#fff;padding:130px var(--gut)}
+.kx-numbers:before{content:'';position:absolute;inset:0;background:radial-gradient(45% 60% at 100% 0%,#1b4a5480,transparent 70%),radial-gradient(40% 50% at 0% 100%,#a8864a26,transparent 70%);pointer-events:none}
+.kx-numbers>*{position:relative}
+.kx-numbers-head{display:block;margin-bottom:64px}
+.kx-numbers-head h2{color:#fff;font-size:clamp(36px,3.8vw,64px);margin:20px 0 0;max-width:16ch}
+.kx-numbers-head em{color:var(--gold-l)}
+.kx-numbers-grid{display:grid;grid-template-columns:1.3fr 1.3fr 1fr 1fr 1fr;gap:14px}
+.kx-num{position:relative;overflow:hidden;padding:34px 28px 38px;border-radius:26px;background:#ffffff08;border:1px solid #ffffff14;transition:background .5s,border-color .5s,transform .7s var(--ease)}
+.kx-num:hover{background:#ffffff10;border-color:#e3c99566;transform:translateY(-6px)!important}
+.kx-num.big{background:linear-gradient(150deg,#123843,#0b1f26);border-color:#e3c99540}
+.kx-num b{display:flex;align-items:flex-start;font-family:var(--display);font-weight:400;font-size:clamp(56px,5.4vw,96px);line-height:.9;letter-spacing:-.04em;color:#fff}
+.kx-num.big b{font-size:clamp(72px,7vw,128px);color:var(--gold-l)}
+.kx-num b i{font-style:normal;font-size:.5em;color:var(--gold-l);margin:.08em 0 0 .06em}
+.kx-num h3{font-family:var(--kx-sans),sans-serif;font-size:12px;letter-spacing:.24em;text-transform:uppercase;font-weight:600;margin:26px 0 10px;color:#fff}
+.kx .kx-num p{font-size:13px;line-height:1.6;color:#ffffff8c;margin:0}
+.kx-num-bar{position:absolute;left:0;bottom:0;height:3px;width:100%;background:linear-gradient(90deg,var(--gold),var(--aqua));transform:scaleX(0);transform-origin:left;transition:transform 1.6s var(--ease);transition-delay:calc(var(--d,0s) + .3s)}
+.kx-num.is-in .kx-num-bar,.kx:not(.kx-motion) .kx-num-bar{transform:none}
+@media(max-width:1100px){.kx-numbers-grid{grid-template-columns:1fr 1fr 1fr}.kx-num.big{grid-column:span 1}}
+@media(max-width:800px){.kx-numbers{padding:90px var(--gut)}.kx-numbers-head{flex-direction:column;align-items:flex-start;margin-bottom:44px}.kx-numbers-grid{grid-template-columns:1fr 1fr}.kx-num.big:first-child{grid-column:1/-1}.kx-num{padding:26px 20px 30px}}

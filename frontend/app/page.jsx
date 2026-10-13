@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { HeroDestinations, ArchReveal, StackCards, HoverList, Motion } from './kx-client';
 import { KxHead, KxClosing } from './kx-ui';
-import { capabilities, companies, articles, steps, craftImages } from './data';
+import { capabilities, companies, articles, steps, craftImages, stats } from './data';
 import './home.css';
 
 const places = [
@@ -49,7 +49,7 @@ export const metadata = {
 const orgSchema = {
   '@context':'https://schema.org','@type':'GeneralContractor',name:'KEA Building Contracting',
   description:'Construction company in Dubai delivering luxury mansions, signature villas, residential buildings and commercial construction.',
-  areaServed:{'@type':'City',name:'Dubai'},address:{'@type':'PostalAddress',addressLocality:'Dubai',addressCountry:'AE'},
+  areaServed:{'@type':'City',name:'Dubai'},telephone:'+97143261339',email:'info@construct.ae',address:{'@type':'PostalAddress',streetAddress:'Office 802, Iris Bay Tower, Business Bay',addressLocality:'Dubai',addressCountry:'AE'},
   knowsAbout:['Luxury villa construction','Mansion construction','Residential building construction','Commercial construction','Project management','QA/QC','HSE'],
 };
 
@@ -73,15 +73,25 @@ export default function Home(){return <Motion>
         </ul>
         <div className="kx-intro-cta" data-reveal style={{'--d':'.26s'}}><Link href="/about/" className="kx-link">Our story <span>→</span></Link><Link href="/expertise/" className="kx-link">Our expertise <span>→</span></Link></div>
       </div>
-      <div className="kx-intro-media">
-        <figure className="kx-intro-main" data-reveal="clip"><img src="/images/palm-villas.jpg" alt="Waterfront villas along a frond of Palm Jumeirah, Dubai" loading="lazy"/></figure>
-        <figure className="kx-intro-small" data-reveal="clip" style={{'--d':'.2s'}}><img src="/images/luxury-interior.jpg" alt="Luxury villa interior with timber, stone and full-height glazing" loading="lazy"/></figure>
-        <div className="kx-intro-badge" data-reveal style={{'--d':'.35s'}}><b>Dubai</b><span>Mansions · Villas · Developments</span></div>
+      <div className="kx-intro-media kx-mosaic">
+        {[['mansion-infinity','Mansions','/expertise/#villas','Contemporary mansion with stone cladding and an infinity pool'],
+          ['villa','Luxury villas','/expertise/#villas','White modern villa with landscaped terraces and a pool'],
+          ['tower-night','Residential buildings','/expertise/#residential','Residential tower lit at dusk in Dubai'],
+          ['dubai-downtown','Commercial buildings','/expertise/#commercial','Downtown Dubai commercial towers and Burj Khalifa']].map(([img,label,href,alt],i)=>
+          <Link key={label} href={href} className={`kx-tile t${i}`} data-reveal="clip" data-cursor="view" style={{'--d':`${i*.12}s`}}>
+            <img src={`/images/${img}.jpg`} alt={alt} loading="lazy"/>
+            <span className="kx-tile-label"><small>0{i+1}</small>{label}<b>→</b></span>
+          </Link>)}
       </div>
     </div>
-    <div className="kx-stats">
-      {[[3,'Construction sectors'],[5,'Core disciplines'],[4,'Partner developers'],[5,'Associated companies']].map(([n,l],i)=><div key={l} data-reveal style={{'--d':`${i*.1}s`}}><b data-count={n}>0{n}</b><span>{l}</span></div>)}
-    </div>
+  </section>
+
+  <section className="kx-numbers" aria-label="KEA in numbers">
+    <div className="kx-numbers-head" data-reveal><p className="kx-tag light"><i/>KEA in numbers</p><h2>Built on experience. <em>Measured in trust.</em></h2></div>
+    <div className="kx-numbers-grid">{stats.map((s,i)=><div className={`kx-num ${i<2?'big':''}`} key={s.label} data-reveal style={{'--d':`${i*.1}s`}}>
+      <b><span data-count={s.n}>{String(s.n).padStart(2,'0')}</span>{s.plus&&<i>+</i>}</b>
+      <h3>{s.label}</h3><p>{s.text}</p><span className="kx-num-bar" aria-hidden="true"/>
+    </div>)}</div>
   </section>
 
   <ArchReveal image="palm-view" alt="View from Palm Jumeirah across the water to the Dubai Marina skyline" floats={seaFloats}

@@ -21,3 +21,16 @@ export const articles = [
 ];
 export const steps = [['Envision','We listen first: your brief, your lifestyle, your horizon.'],['Engineer','Structure, services and design interfaces resolved early.'],['Build','Disciplined site delivery with QA/QC and HSE at its core.'],['Unveil','Every finish reviewed, every detail ready for handover.']];
 export const craftImages = ['luxury-interior','lagoon-suite','master-suite','interior','residence'];
+export const contact = {
+ address:['Office 802, Iris Bay Tower','Business Bay, Dubai','United Arab Emirates'],
+ mapUrl:'https://www.google.com/maps/search/?api=1&query=Iris+Bay+Tower+Business+Bay+Dubai',
+ phone:'04 326 1339', phoneHref:'tel:+97143261339', phoneIntl:'+971 4 326 1339',
+ email:'info@construct.ae',
+};
+export const stats = [
+ {n:100,plus:true,label:'Projects',text:'Across villas, mansions, residential and commercial work.'},
+ {n:20,plus:true,label:'Partners',text:'Developers, consultants and specialist trades.'},
+ {n:3,label:'Construction sectors',text:'Luxury residences, residential and commercial.'},
+ {n:5,label:'Core disciplines',text:'Engineering, PM, planning, QA/QC and HSE.'},
+ {n:10,plus:true,label:'Associated companies',text:'Design, development, joinery and technology.'},
+];

@@ -34,7 +34,7 @@ export default function About(){return <Motion>
         <p className="kx-lead">KEA Building Contracting brings together engineering, project management and construction delivery across Dubai.</p>
         <p>Our work spans luxury mansions and signature villas in MBR City, Palm Jumeirah and DAMAC Lagoons, residential buildings in Dubai South and Gutti developments, and large corporate and office projects.</p>
         <p>We believe the strength of a building begins with the way a team works: clear responsibilities, careful coordination and respect for the details. For a private client, that means understanding the personal ambition behind a home. For a developer, it means recognising how each decision sits within a wider programme.</p>
-        <div className="kx-mini-stats">{[[3,'Sectors'],[5,'Disciplines'],[5,'Companies']].map(([n,l])=><div key={l}><b data-count={n}>0{n}</b><span>{l}</span></div>)}</div>
+        <div className="kx-mini-stats">{[[3,'Sectors'],[5,'Disciplines'],[10,'Companies',true]].map(([n,l,plus])=><div key={l}><b><span data-count={n}>{String(n).padStart(2,'0')}</span>{plus&&<i>+</i>}</b><span>{l}</span></div>)}</div>
         <Link href="/expertise/" className="kx-link">Explore our expertise <span>→</span></Link>
       </div>
     </div>
@@ -83,7 +83,7 @@ export default function About(){return <Motion>
   </section>
 
   <section className="kx-wrap kx-network">
-    <KxHead tag="06 — Our business network" title="A wider world of" italic="expertise."><p>Five associated businesses spanning construction, architecture and interiors, real estate, joinery and technology.</p></KxHead>
+    <KxHead tag="06 — Our business network" title="A wider world of" italic="expertise."><p>A network of 10+ associated businesses, including these companies spanning construction, architecture and interiors, real estate, joinery and technology.</p></KxHead>
     <HoverList items={companies.map(([n,d],i)=>({title:n,text:d,image:networkImages[i]}))}/>
     <p className="kx-note">Associated companies retain their individual legal identities and contractual responsibilities.</p>
   </section>

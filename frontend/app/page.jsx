@@ -9,7 +9,7 @@ const places = [
   {image:'palm-jumeirah-fronds-dusk',name:'Palm Jumeirah',line:'Island living',text:'Signature villas on the world’s most famous island, steps from the sea.',href:'/projects/',alt:'Aerial view of Palm Jumeirah villas and Atlantis at sunset'},
   {image:'dubai-burj-al-arab-beach',name:'Jumeirah Coast',line:'Life by the sea',text:'Waterfront living where every room opens towards the Arabian Gulf.',href:'/projects/',alt:'Aerial view of Burj Al Arab on the Jumeirah coastline'},
   {image:'lagoon-community',name:'The Lagoons',line:'Turquoise retreats',text:'Lagoon-inspired living, shaped around water, light and calm.',href:'/projects/',alt:'Villas set over a turquoise lagoon'},
-  {image:'dubai-palm-marina-sunset',name:'Dubai Marina',line:'City by the water',text:'Vertical living along the marina, where the city meets the shoreline.',href:'/projects/',alt:'Palm Jumeirah and the Dubai Marina skyline at sunset'},
+  {image:'dubai-marina-night',name:'Dubai Marina',line:'City by the water',text:'Vertical living along the marina, where the city meets the shoreline.',href:'/projects/',alt:'Dubai Marina towers and yachts along the waterway at dusk'},
 ];
 
 const residences = [

@@ -4,19 +4,20 @@
 export const guides = [
   {
     slug:'villa-construction-cost-dubai',
+    related:['villa-construction-timeline-dubai','construction-contract-dubai','how-to-choose-construction-company-dubai'],
     tag:'Villa construction',
     keyword:'Villa construction cost in Dubai',
     title:'Villa construction cost in Dubai: what really drives your budget',
-    description:'What affects villa construction cost in Dubai: size, design, structure, finishes, pools, landscaping, approvals and site conditions — explained by a Dubai contractor.',
+    description:'What affects villa construction cost in Dubai: size, design, structure, finishes, pools, landscaping, approvals and site conditions, explained.',
     image:'villa-sunset-3',
     intro:'“How much does it cost to build a villa in Dubai?” is one of the first questions every homeowner asks. The honest answer is that it depends on a handful of decisions — and understanding them early is the best way to protect your budget.',
     sections:[
       ['Size and layout set the starting point','The built-up area, number of floors and basement requirements form the base of any construction budget. A compact two-floor villa and a multi-level mansion with a basement are very different projects, even on similar plots, because structure, excavation and services all scale with the design.'],
       ['Architecture and structural complexity','Cantilevers, large spans, double-height spaces and full-height glazing create beautiful homes, but they also need more engineering and more careful construction. Simple, efficient structural grids are generally more economical than highly sculpted forms.'],
       ['Finishes are the biggest variable','Natural stone, bespoke joinery, imported fittings and specialist glazing can change a budget significantly. Agreeing a clear finishes schedule — with approved samples — before construction begins is one of the most effective ways to avoid surprises later.'],
-      ['Pools, landscape and outdoor living','Infinity pools, water features, terraces, outdoor kitchens and mature landscaping are a large part of luxury villa living in Dubai. They should be planned and priced together with the house rather than added at the end.'],
+      ['Pools, landscape and outdoor living','Infinity pools, water features, terraces, outdoor kitchens and mature landscaping are a large part of luxury villa living in Dubai. They should be planned and priced together with the house rather than added at the end. See our guide to [villa swimming pool construction](/insights/swimming-pool-construction-dubai/).'],
       ['Site conditions, approvals and services','Soil conditions, groundwater, access to the plot and the requirements of the relevant authority and master developer all influence cost and programme. Utility connections and authority inspections also need to be built into the plan.'],
-      ['How to get an accurate estimate','A reliable estimate comes from clear information: architectural and structural drawings, a finishes specification and a defined scope. The more complete the brief, the more accurate and comparable contractor proposals will be.'],
+      ['How to get an accurate estimate','A reliable estimate comes from clear information: architectural and structural drawings, a finishes specification and a defined scope. The more complete the brief, the more accurate and comparable contractor proposals will be. Learn [how long villa construction takes](/insights/villa-construction-timeline-dubai/) and explore our [luxury villa construction services](/expertise/#villas).'],
     ],
     faqs:[
       ['What affects the cost of building a villa in Dubai?','The main factors are built-up area, number of floors and basements, structural complexity, the level of finishes, pools and landscaping, site conditions, and authority and utility requirements.'],
@@ -28,6 +29,7 @@ export const guides = [
   },
   {
     slug:'how-to-choose-construction-company-dubai',
+    related:['construction-contract-dubai','building-permit-dubai-villa','villa-construction-cost-dubai'],
     seoTitle:'How to Choose a Construction Company in Dubai | Checklist',
     tag:'Contractor guide',
     keyword:'How to choose a construction company in Dubai',
@@ -36,8 +38,8 @@ export const guides = [
     image:'project-private-mansion',
     intro:'Choosing a building contractor is one of the most important decisions in any project. The right construction company protects your design, your budget and your timeline. Here is what to look for before you sign.',
     sections:[
-      ['Check licensing and registration','A construction company in Dubai should hold a valid trade licence for contracting activities and be registered with the relevant authorities for the type and size of work. Ask for copies and check that the legal entity on the licence matches the one on the contract.'],
-      ['Look at relevant experience','Building a luxury villa is different from a residential tower or a commercial building. Ask to see projects similar to yours in type, size and specification, and ask what role the company played on each one.'],
+      ['Check licensing and registration','A construction company in Dubai should hold a valid trade licence for contracting activities and be registered with the relevant authorities for the type and size of work. Ask for copies and check that the legal entity on the licence matches the one on the contract. Our guide to [construction contracts in Dubai](/insights/construction-contract-dubai/) explains what to agree in writing.'],
+      ['Look at relevant experience','Building a luxury villa is different from a residential tower or a commercial building. Ask to see projects similar to yours in type, size and specification, and ask what role the company played on each one. You can browse [KEA’s construction projects](/projects/) for examples.'],
       ['Understand who is on the team','Good construction depends on people: engineers, project managers, planners, quality and safety professionals. Ask who will manage your project day to day and how the site team is structured.'],
       ['Ask how quality is controlled','A professional contractor has a clear QA/QC process: material submittals, sample approvals, inspection and test plans, and snagging before handover. Ask how defects are recorded and resolved.'],
       ['Health, safety and site management','A safe, organised site is a sign of a well-run company. Ask about the HSE plan, site supervision, and how neighbours, access and deliveries will be managed — especially in established villa communities.'],
@@ -53,6 +55,7 @@ export const guides = [
   },
   {
     slug:'building-a-villa-in-dubai-step-by-step',
+    related:['building-permit-dubai-villa','villa-construction-timeline-dubai','swimming-pool-construction-dubai'],
     tag:'Step-by-step guide',
     keyword:'How to build a villa in Dubai',
     title:'How to build a villa in Dubai: the process from plot to handover',
@@ -62,9 +65,9 @@ export const guides = [
     sections:[
       ['1. Plot, brief and feasibility','Everything starts with the plot and the brief: how you want to live, the number of bedrooms, outdoor spaces, pools and parking. Each community has its own planning rules, such as setbacks, heights and design guidelines, which shape what can be built.'],
       ['2. Design with your consultant','A licensed architectural and engineering consultant develops the concept, then the detailed architectural, structural and services drawings. This is the moment to resolve layout, materials and budget — changes later are slower and costlier.'],
-      ['3. Approvals and NOCs','Before construction, the design must be approved by the relevant authority for the area, and many communities also need no-objection certificates from the master developer and service providers. Requirements vary by location, so your consultant normally manages this process.'],
+      ['3. Approvals and NOCs','Before construction, the design must be approved by the relevant authority for the area, and many communities also need no-objection certificates from the master developer and service providers. Requirements vary by location, so your consultant normally manages this process. Read our simple guide to [building permits in Dubai](/insights/building-permit-dubai-villa/).'],
       ['4. Choose your contractor','Invite proposals from experienced contractors using the same drawings and specifications so they can be compared fairly. Agree the scope, programme, payments and handover requirements in a written contract.'],
-      ['5. Construction stages','A villa typically moves through excavation and foundations, the structural frame, blockwork and MEP rough-in, facade and glazing, internal finishes, then pools and landscaping. Inspections take place at key stages along the way.'],
+      ['5. Construction stages','A villa typically moves through excavation and foundations, the structural frame, blockwork and MEP rough-in, facade and glazing, internal finishes, then pools and landscaping. Inspections take place at key stages along the way. For timings, see [how long it takes to build a villa in Dubai](/insights/villa-construction-timeline-dubai/).'],
       ['6. Completion and handover','Before handover, the contractor completes snagging and testing, and the authorities carry out final inspections so the home can be connected and certified for occupation. A good handover includes documentation, warranties and a clear defects period.'],
     ],
     faqs:[
@@ -77,6 +80,7 @@ export const guides = [
   },
   {
     slug:'luxury-mansion-construction-dubai',
+    related:['modern-villa-design-dubai','palm-jumeirah-villa-construction','swimming-pool-construction-dubai'],
     seoTitle:'Luxury Mansion Construction in Dubai: Design & Materials',
     tag:'Mansions',
     keyword:'Luxury mansion construction in Dubai',
@@ -89,7 +93,7 @@ export const guides = [
       ['Engineering behind the elegance','Large spans, cantilevered terraces, basements and heavy stone cladding need careful structural design and coordination. Resolving these interfaces early prevents compromises to the architecture later.'],
       ['Materials that age beautifully','Natural stone, solid timber, bespoke joinery and high-performance glazing are the language of luxury. Sample approvals, mock-ups and careful installation protect the quality of each material.'],
       ['Comfort and technology','Climate control, lighting design, smart-home systems, security and audio-visual installations are now expected in a Dubai mansion. They need to be coordinated with the architecture so that technology stays discreet.'],
-      ['Pools, gardens and outdoor living','Infinity pools, water features, outdoor kitchens and mature landscaping extend the living space outdoors. Planning levels, drainage and waterproofing together keeps the outdoor spaces flawless for years.'],
+      ['Pools, gardens and outdoor living','Infinity pools, water features, outdoor kitchens and mature landscaping extend the living space outdoors. Planning levels, drainage and waterproofing together keeps the outdoor spaces flawless for years. See our [Private Mansion](/projects/private-mansion/) project and [mansion construction services](/expertise/#mansions).'],
       ['Quality you can feel','The difference between good and exceptional is often in junctions, alignments and transitions. A disciplined QA/QC process with inspections at every stage is what delivers that level of finish.'],
     ],
     faqs:[
@@ -102,10 +106,11 @@ export const guides = [
   },
   {
     slug:'waterfront-sea-view-villa-construction-dubai',
+    related:['palm-jumeirah-villa-construction','swimming-pool-construction-dubai','luxury-mansion-construction-dubai'],
     tag:'Waterfront homes',
     keyword:'Waterfront villa construction in Dubai',
     title:'Building a waterfront or sea-view villa in Dubai: what to plan for',
-    description:'Waterfront and sea-view villa construction in Dubai: coastal conditions, waterproofing, foundations, glazing, pools and outdoor living on Palm Jumeirah and beyond.',
+    description:'Waterfront and sea-view villa construction in Dubai: coastal conditions, waterproofing, foundations, glazing, pools and outdoor living.',
     image:'dubai-palm-fronds',
     intro:'Living on the water is one of Dubai’s great luxuries — from Palm Jumeirah to lagoon and canal-side communities. Waterfront homes are also some of the most technically demanding to build. Here is what to plan for.',
     sections:[
@@ -114,7 +119,7 @@ export const guides = [
       ['Materials for a coastal climate','Salt, humidity and heat affect metals, stone and finishes. Choosing suitable materials and protective systems keeps facades, railings and outdoor fittings looking good for longer.'],
       ['Glazing that frames the view','Large-format glazing and sliding systems turn the sea into part of the living room. They must be coordinated with structure, shading, wind loads and drainage to perform as well as they look.'],
       ['Pools, decks and jetties','Infinity-edge pools, timber decks and private moorings are signature features of waterfront living. Levels, drainage and the connection to the water need to be planned with the house from the start.'],
-      ['Approvals in waterfront communities','Waterfront communities often have their own design guidelines and require NOCs from the master developer as well as authority approvals. Checking these early keeps the programme on track.'],
+      ['Approvals in waterfront communities','Waterfront communities often have their own design guidelines and require NOCs from the master developer as well as authority approvals. Checking these early keeps the programme on track. If you are planning on the fronds, read [building a villa on Palm Jumeirah](/insights/palm-jumeirah-villa-construction/), or see our [waterfront home construction](/expertise/#waterfront) services.'],
     ],
     faqs:[
       ['Is it harder to build a villa on the waterfront in Dubai?','It is more technically demanding because of groundwater, soil conditions, waterproofing and coastal exposure, so experienced engineering and careful detailing are important.'],
@@ -126,20 +131,21 @@ export const guides = [
   },
   {
     slug:'dubai-construction-trends-villas-buildings',
+    related:['sustainable-villa-construction-dubai','residential-building-construction-dubai','commercial-building-construction-dubai'],
     seoTitle:'Dubai Construction Trends: Villas, Residential & Commercial',
     tag:'Industry insight',
     keyword:'Dubai construction industry trends',
     title:'Dubai construction trends: what is shaping villas, residential and commercial buildings',
-    description:'The trends shaping construction in Dubai: waterfront living, sustainability, smart homes, quality expectations and how residential and commercial projects are evolving.',
+    description:'The trends shaping construction in Dubai: waterfront living, sustainability, smart homes and how residential and commercial projects are evolving.',
     image:'dubai-marina-night',
     intro:'Dubai’s skyline and communities keep evolving, and so do client expectations. These are the broad trends we see shaping how luxury villas, residential buildings and commercial projects are designed and built.',
     sections:[
       ['Waterfront and community living','Waterfront homes, lagoon-inspired communities and master-planned neighbourhoods continue to attract buyers and developers, placing new emphasis on outdoor living, views and amenities.'],
-      ['Sustainability and efficiency','Energy-efficient envelopes, better insulation and glazing, efficient cooling and responsible material choices are increasingly part of the brief, supported by the emirate’s green building requirements.'],
+      ['Sustainability and efficiency','Energy-efficient envelopes, better insulation and glazing, efficient cooling and responsible material choices are increasingly part of the brief, supported by the emirate’s green building requirements. Read more in [sustainable villa construction in Dubai](/insights/sustainable-villa-construction-dubai/).'],
       ['Smart and connected homes','Integrated lighting, climate control, security and home automation are now standard expectations in luxury homes, and need coordinating from the earliest design stages.'],
       ['Higher quality expectations','Clients and developers expect consistent, high-quality finishes. This puts more focus on QA/QC, mock-ups, approved samples and experienced site teams.'],
-      ['Residential and mixed-use growth','Residential buildings and mixed-use developments with shared amenities, retail podiums and landscaped spaces continue to shape new communities across the city.'],
-      ['Commercial spaces that work harder','Corporate, industrial and community buildings are being designed around how people actually use them, with flexible layouts, efficient services and clear operational planning.'],
+      ['Residential and mixed-use growth','Residential buildings and mixed-use developments with shared amenities, retail podiums and landscaped spaces continue to shape new communities across the city. See our guide to [residential building construction](/insights/residential-building-construction-dubai/).'],
+      ['Commercial spaces that work harder','Corporate, industrial and community buildings are being designed around how people actually use them, with flexible layouts, efficient services and clear operational planning. Read [commercial building construction in Dubai](/insights/commercial-building-construction-dubai/).'],
     ],
     faqs:[
       ['What are the current construction trends in Dubai?','Key trends include waterfront and community living, sustainability and energy efficiency, smart homes, higher quality expectations, and residential and mixed-use growth.'],

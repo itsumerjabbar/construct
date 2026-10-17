@@ -1,6 +1,6 @@
 // Central SEO configuration: site address, page metadata helper and structured data (schema.org).
 // Set NEXT_PUBLIC_SITE_URL to the live domain before building for production.
-export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || 'https://kea-building-contracting.opalpike6.chatgpt.site').replace(/\/$/, '');
+export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || 'https://construct.ae').replace(/\/$/, '');
 export const SITE_NAME = 'KEA Building Contracting';
 const ORG_ID = `${SITE_URL}/#organization`;
 

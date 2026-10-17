@@ -2,64 +2,26 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { narratives } from '../../editorial';
 import { projects } from '../../data';
-import { KxHero, KxHead, KxClosing, KxProjectCard } from '../../kx-ui';
+import { KxClosing } from '../../kx-ui';
 import { Motion } from '../../kx-client';
+import { CollectionCard } from '../collection';
 
 export function generateStaticParams(){return projects.map(p=>({slug:p.slug}))}
 export async function generateMetadata({params}){const {slug}=await params;return {title:projects.find(p=>p.slug===slug)?.title||'Project'}}
-
-const moods={
-  'Mansions & villas':['luxury-interior','villa-sunset-4','master-suite'],
-  'Residential':['project-residential-building','project-gutti','interior'],
-  'Commercial':['project-mosque','project-como','dubai-downtown'],
-};
 
 export default async function Project({params}){
   const {slug}=await params;const p=projects.find(x=>x.slug===slug);if(!p)notFound();
   const n=narratives[p.narrative]||narratives[p.slug];const index=projects.indexOf(p);
   const related=projects.filter(x=>x.slug!==p.slug).sort((a,b)=>Number(b.category===p.category)-Number(a.category===p.category)).slice(0,2);
-  return <Motion>
-    <KxHero crumb={<Link href="/projects/">Projects</Link>} tag={`${p.category} · ${p.location}`} title={p.title} italic={{'Mansions & villas':'A private residence.','Residential':'A place to call home.','Commercial':'Built for purpose.'}[p.category]} image={p.image} alt="Illustrative architectural reference" size="detail"/>
-
-    <section className="kx-wrap kx-detail" id="content">
-      <div className="kx-facts" data-reveal>
-        <div><small>Location</small><b>{p.location}</b></div>
-        <div><small>Sector</small><b>{p.category}</b></div>
-        <div><small>Project</small><b>0{index+1} / 0{projects.length}</b></div>
-        <div><small>Disciplines</small><b>Engineering · PM · QA/QC · HSE</b></div>
-      </div>
-      <div className="kx-detail-grid">
-        <div data-reveal><p className="kx-tag"><i/>The project perspective</p><h2>{p.name}</h2></div>
-        <div className="kx-prose" data-reveal style={{'--d':'.15s'}}>
-          <p className="kx-lead">{p.text}</p>
-          <p>Our delivery capabilities bring together engineering, project management, planning, QA/QC and HSE to support a considered construction process.</p>
-          <Link href="/contact/" className="kx-link">Talk to us about a similar project <span>→</span></Link>
-        </div>
-      </div>
-    </section>
-
-    <section className="kx-narrative">
-      <figure className="kx-narrative-img" data-reveal="clip"><img src={`/images/${n.image}.jpg`} alt="Illustrative architectural detail" loading="lazy"/></figure>
-      <div className="kx-narrative-copy" data-reveal style={{'--d':'.15s'}}>
-        <p className="kx-tag light"><i/>Design intent & construction thinking</p>
-        <h2>{n.heading}</h2>
-        <p>{n.body}</p>
-      </div>
-    </section>
-
-    <section className="kx-wrap kx-focus">
-      <KxHead tag="Where attention makes a difference" title="A closer look at" italic="the priorities."/>
-      <div className="focus-grid kx-pgrid three">{n.focus.map(([t,d],i)=><article key={t} data-reveal style={{'--d':`${i*.12}s`}}><span>0{i+1}</span><h3>{t}</h3><p>{d}</p></article>)}</div>
-    </section>
-
-    <section className="kx-mood" aria-label="Mood and materials">{moods[p.category].map((img,i)=><figure key={img} data-reveal="clip" style={{'--d':`${i*.12}s`}}><img src={`/images/${img}.jpg`} alt="" loading="lazy"/></figure>)}</section>
-
-    <section className="kx-wrap related-work">
-      <KxHead tag="Continue exploring" title="Another place." italic="A different perspective."><Link href="/projects/" className="kx-link">View the collection <span>→</span></Link></KxHead>
-      <div className="kx-gallery two">{related.map(r=><KxProjectCard key={r.slug} project={r} index={projects.indexOf(r)}/>)}</div>
-      <p className="kx-note">Imagery is illustrative. Detailed project photography, scope and delivery information will be added when approved.</p>
-    </section>
-
+  const next=projects[(index+1)%projects.length];
+  return <Motion className="pr-page pr-detail-page">
+    <section className="pr-detail-header"><nav aria-label="Breadcrumb" className="pr-breadcrumb"><Link href="/projects/">← All projects</Link><span>{String(index+1).padStart(2,'0')} / {String(projects.length).padStart(2,'0')}</span></nav><div className="pr-detail-title"><div><p className="kx-tag"><i/>{p.category}</p><h1>{p.title}</h1></div><span className="pr-label">{p.location}</span></div></section>
+    <figure className="pr-detail-hero"><img src={`/images/${p.image}.jpg`} alt={p.name} fetchPriority="high"/><figcaption><span>{p.name}</span><a href="#project-story">THE PROJECT STORY <span>↓</span></a></figcaption></figure>
+    <section className="pr-section pr-story" id="project-story"><aside className="pr-facts"><span className="pr-label">PROJECT AT A GLANCE</span><dl><div><dt>Project</dt><dd>{p.name}</dd></div><div><dt>Location</dt><dd>{p.location}</dd></div><div><dt>Sector</dt><dd>{p.category}</dd></div><div><dt>Our capabilities</dt><dd>Engineering · Project management · Planning · QA/QC · HSE</dd></div></dl><Link href="/contact/" className="pr-text-link">Make an inquiry <span>↗</span></Link></aside><div className="pr-story-copy" data-reveal><p className="kx-tag"><i/>The project perspective</p><h2>{p.name}.<br/><em>Considered in every detail.</em></h2><p className="pr-lead">{p.text}</p><p>Our delivery capabilities bring together engineering, project management, planning, QA/QC and HSE to support a considered construction process.</p></div></section>
+    <section className="pr-design-story"><div className="pr-design-photo" data-reveal="clip"><img src={`/images/${n.image}.jpg`} alt="Illustrative architectural context" loading="lazy"/><span>DESIGN & MATERIAL PERSPECTIVE</span></div><div className="pr-design-copy" data-reveal><p className="kx-tag light"><i/>The thinking behind the work</p><h2>{n.heading}</h2><p>{n.body}</p><span className="pr-design-rule"/><p className="pr-design-note">The construction approach is shaped around the specific brief, scope and requirements of each project.</p></div></section>
+    <section className="pr-section pr-priorities"><div className="pr-section-heading" data-reveal><div><p className="kx-tag"><i/>Where attention makes a difference</p><h2>Built around<br/><em>what matters.</em></h2></div><p>Good construction connects the wider vision with the individual decisions that define the result.</p></div><div className="pr-priority-grid">{n.focus.map(([title,text],i)=><article key={title} data-reveal style={{'--d':`${i*.1}s`}}><span>0{i+1}</span><h3>{title}</h3><p>{text}</p></article>)}</div></section>
+    <section className="pr-next-project"><Link href={`/projects/${next.slug}/`}><div><span className="pr-label">NEXT IN THE COLLECTION</span><h2>{next.name}</h2><p>{next.category} · {next.location}</p></div><img src={`/images/${next.image}.jpg`} alt={next.name} loading="lazy"/><span className="pr-next-arrow">↗</span></Link></section>
+    <section className="pr-section pr-related"><div className="pr-section-heading"><div><p className="kx-tag"><i/>Continue exploring</p><h2>More to <em>discover.</em></h2></div><Link href="/projects/#portfolio" className="pr-text-link">View the collection <span>↗</span></Link></div><div className="pr-collection-grid">{related.map(r=><CollectionCard key={r.slug} project={r} index={projects.indexOf(r)}/>)}</div></section>
     <KxClosing image="palm-jumeirah-fronds-dusk" alt="Palm Jumeirah villas at sunset"/>
   </Motion>;
 }

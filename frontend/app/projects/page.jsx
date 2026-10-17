@@ -1,52 +1,22 @@
 import Link from 'next/link';
-import { KxHero, KxHead, KxClosing } from '../kx-ui';
-import { Motion, HoverList, ProjectGallery } from '../kx-client';
+import { KxClosing } from '../kx-ui';
+import { Motion } from '../kx-client';
+import { projects } from '../data';
+import Collection from './collection';
 export const metadata={title:'Our projects'};
 
-const locations=[
-  {title:'MBR City',text:'Bespoke private residences with an emphasis on architectural intent, proportion and the individual brief.',href:'/projects/#portfolio',image:'villa-sunset-2'},
-  {title:'Palm Jumeirah',text:'Signature waterfront living, where interior spaces open towards the sea.',href:'/projects/#portfolio',image:'villa-sunset-1'},
-  {title:'DAMAC Lagoons',text:'Villa construction within a lagoon community, balancing individual homes with a consistent approach to delivery.',href:'/projects/#portfolio',image:'lagoon-villas'},
-  {title:'Dubai South',text:'Residential buildings that bring together shared spaces, private living and coordination at building scale.',href:'/projects/#portfolio',image:'marina-skyline'},
-  {title:'Gutti developments',text:'A residential focus with attention to civil works, technical interfaces and the finishing sequence.',href:'/projects/#portfolio',image:'villa-al-barari'},
-];
-const questions=[
-  ['What should I include in a project inquiry?','Share the location, intended use, approximate built-up area if known, design stage and the scope you would like to discuss. A proposed timeline and any important site or access constraints also help frame the conversation.'],
-  ['Can I explore a project before every detail is resolved?','You can prepare an inquiry at an early stage. Explain which decisions have been made and which remain open, so the next discussion can focus on the information and coordination your project needs.'],
-  ['Which construction sectors does KEA focus on?','The portfolio covers luxury mansions and signature villas, residential buildings, and large corporate and office projects across Dubai. Engineering, project management, planning, QA/QC and HSE support these areas of work.'],
-  ['Are the photographs of completed KEA projects?','The current website uses illustrative architectural and Dubai photography to communicate the design direction. Approved project photographs and verified delivery details will be added when available.'],
-  ['How is a project scope confirmed?','A website inquiry is a starting point. Scope, responsibilities, programme and commercial terms need to be discussed and set out in a separate written project agreement with the relevant legal entity.'],
-];
-
-export default function Projects(){return <Motion>
-  <KxHero foot="Palm Jumeirah · MBR City · DAMAC Lagoons" tag="Our project landscape" title="Places with purpose." italic="Work with distinction." text="Explore our construction focus across Dubai’s extraordinary homes, residential communities and commercial spaces." image="dubai-palm-sunset" alt="Aerial view of beachfront villas on Palm Jumeirah at sunset">
-    <nav className="kx-pills" aria-label="Explore the portfolio"><a href="#portfolio"><span>01</span>The collection</a><a href="#locations"><span>02</span>Locations & contexts</a><a href="#project-questions"><span>03</span>Planning your project</a></nav>
-  </KxHero>
-
-  <section className="kx-wrap kx-statement" id="content">
-    <p className="kx-tag" data-reveal><i/>A broader view of our work</p>
-    <p className="kx-big" data-reveal>Our project landscape connects the personal scale of a private home <em>with the wider ambition of a growing city.</em></p>
+export default function Projects(){const featured=projects.find(p=>p.slug==='private-mansion');return <Motion className="pr-page">
+  <section className="pr-intro">
+    <div className="pr-intro-top"><p className="kx-tag"><i/>The KEA portfolio</p><span className="pr-label">Dubai, United Arab Emirates</span></div>
+    <div className="pr-title-row"><h1>Places of purpose.<br/><em>Details of distinction.</em></h1><div><p>Private sanctuaries. Contemporary communities. Spaces that bring people together.</p><a href="#portfolio" className="pr-text-link">Discover the collection <span>↓</span></a></div></div>
+    <Link href={`/projects/${featured.slug}/`} className="pr-cover" data-cursor="view"><img src={`/images/${featured.image}.jpg`} alt={featured.name} fetchPriority="high"/><span className="pr-cover-top">IN FOCUS <i/> {featured.category}</span><div className="pr-cover-bottom"><div><span className="pr-label">{featured.location}</span><h2>{featured.name}</h2></div><span className="pr-cover-action">Explore project <b>↗</b></span></div></Link>
+    <div className="pr-intro-foot"><span>A considered approach. A distinctive result.</span><a href="#portfolio">THE COLLECTION <span>↓</span></a></div>
   </section>
-
-  <section className="kx-wrap kx-portfolio" id="portfolio">
-    <KxHead tag="The collection" title="Explore the" italic="possibilities."><p>Filter by sector, then discover the priorities that shape each project.</p></KxHead>
-    <ProjectGallery/>
+  <section className="pr-section pr-portfolio" id="portfolio">
+    <div className="pr-section-heading" data-reveal><div><p className="kx-tag"><i/>Selected work</p><h2>Every project,<br/><em>its own character.</em></h2></div><p>Explore our collection of mansions, villas, residential buildings and spaces for business and community. Each reflects a different brief, setting and architectural ambition.</p></div>
+    <Collection/>
   </section>
-
-  <section className="kx-wrap kx-locations" id="locations">
-    <KxHead tag="A sense of place" title="Distinct addresses." italic="Individual perspectives." light><p>The setting informs the conversation. Hover a location to see its character.</p></KxHead>
-    <HoverList className="location-rows" items={locations}/>
-  </section>
-
-  <section className="kx-wrap kx-faq" id="project-questions">
-    <div className="kx-faq-head" data-reveal>
-      <p className="kx-tag"><i/>Before we begin</p>
-      <h2>A little clarity. <em>A stronger start.</em></h2>
-      <p>A first conversation does not need a finished brief. It needs an understanding of your ambition and where the project stands today.</p>
-      <Link href="/contact/" className="kx-link">Prepare your inquiry <span>→</span></Link>
-    </div>
-    <div className="kx-accordion">{questions.map(([q,a],i)=><details key={q} open={i===0}><summary><span>0{i+1}</span><h3>{q}</h3><i aria-hidden="true"/></summary><p>{a}</p></details>)}</div>
-  </section>
-
+  <section className="pr-perspective"><div className="pr-perspective-photo" data-reveal="clip"><img src="/images/project-beachfront-villa.jpg" alt="Beachfront Villa" loading="lazy"/><span>PRIVATE LIVING · DUBAI</span></div><div className="pr-perspective-copy" data-reveal><p className="kx-tag light"><i/>Beyond the photograph</p><h2>A vision made tangible.<br/><em>A commitment in every detail.</em></h2><p>The finished space is only part of the story. Behind it are the conversations, technical decisions and coordinated work that bring an architectural idea into focus.</p><p>From the individual character of a private residence to the demands of a larger development, our attention connects the design with the way it is built.</p><Link href="/expertise/" className="pr-text-link light">Discover our capabilities <span>↗</span></Link></div></section>
+  <section className="pr-section pr-project-start"><div><p className="kx-tag"><i/>Your next project</p><h2>Have a vision<br/><em>of your own?</em></h2></div><div><p>Tell us about the location, the kind of space you want to create and where you are in the journey. A considered conversation is the first step towards a considered build.</p><Link href="/contact/" className="pr-text-link">Discuss your project <span>↗</span></Link></div></section>
   <KxClosing image="dubai-marina-night" alt="Dubai Marina towers and yachts at dusk"/>
 </Motion>}

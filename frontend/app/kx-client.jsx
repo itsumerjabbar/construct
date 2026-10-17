@@ -8,10 +8,11 @@ const reduced = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* Home hero: destinations switch the backdrop with a circular wipe */
 const destinations = [
-  {image:'dubai-skyline',label:'Downtown',line:'Skyline living',alt:'Dubai skyline with Burj Khalifa at sunset'},
-  {image:'villa-sunset-1',label:'Palm Jumeirah',line:'Sea-view villas',alt:'Luxury sea-view villa with infinity pool facing the Dubai skyline at sunset'},
-  {image:'burj-al-arab',label:'Jumeirah Coast',line:'Life by the sea',alt:'Aerial view of Burj Al Arab surrounded by the Arabian Gulf'},
-  {image:'marina-skyline',label:'Dubai Marina',line:'City by the water',alt:'Dubai Marina towers rising above the sea',bright:true},
+  {image:'villa-sunset-4',label:'Sea-view villas',line:'Living on the water',alt:'Luxury villa with infinity pool facing the Dubai skyline at sunset'},
+  {image:'dubai-palm-aerial',label:'Palm Jumeirah',line:'Island living',alt:'Aerial view of Palm Jumeirah and Atlantis at sunset'},
+  {image:'dubai-burj-fountain',label:'Downtown',line:'Skyline living',alt:'Burj Khalifa and the Dubai Fountain at sunset'},
+  {image:'dubai-burj-al-arab-beach',label:'Jumeirah Coast',line:'Life by the sea',alt:'Burj Al Arab seen from Jumeirah beach at sunset'},
+  {image:'dubai-palm-sunset',label:'Palm villas',line:'Beachfront living',alt:'Aerial view of beachfront villas on the fronds of Palm Jumeirah at sunset'},
 ];
 const HERO_MS = 6500;
 

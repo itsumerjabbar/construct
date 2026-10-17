@@ -19,7 +19,7 @@ const questions=[
 ];
 
 export default function Projects(){return <Motion>
-  <KxHero foot="Palm Jumeirah · MBR City · DAMAC Lagoons" tag="Our project landscape" title="Places with purpose." italic="Work with distinction." text="Explore our construction focus across Dubai’s extraordinary homes, residential communities and commercial spaces." image="tower-night" alt="Contemporary residential tower lit at dusk with the Dubai skyline behind">
+  <KxHero foot="Palm Jumeirah · MBR City · DAMAC Lagoons" tag="Our project landscape" title="Places with purpose." italic="Work with distinction." text="Explore our construction focus across Dubai’s extraordinary homes, residential communities and commercial spaces." image="dubai-palm-sunset" alt="Aerial view of beachfront villas on Palm Jumeirah at sunset">
     <nav className="kx-pills" aria-label="Explore the portfolio"><a href="#portfolio"><span>01</span>The collection</a><a href="#locations"><span>02</span>Locations & contexts</a><a href="#project-questions"><span>03</span>Planning your project</a></nav>
   </KxHero>
 

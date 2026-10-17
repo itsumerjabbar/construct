@@ -20,7 +20,7 @@ const disciplines=[
 const networkImages=['villa-sunset-3','luxury-interior','palm-villas','master-suite','dubai-downtown'];
 
 export default function About(){return <Motion>
-  <KxHero foot="Vision · Integrity · Craft" tag="Our story" title="Built on conviction." italic="Defined by craft." text="A construction partner for ambitious visions and places that stand the test of time — from private shoreline villas to the developments shaping Dubai." image="dubai-night-reflection" alt="Downtown Dubai and Burj Khalifa reflected in the water at night"/>
+  <KxHero foot="Vision · Integrity · Craft" tag="Our story" title="Built on conviction." italic="Defined by craft." text="A construction partner for ambitious visions and places that stand the test of time — from private shoreline villas to the developments shaping Dubai." image="dubai-palm-fronds" alt="Beachfront villas on the fronds of Palm Jumeirah with the Dubai Marina skyline"/>
 
   <section className="kx-wrap kx-story" id="content">
     <KxHead tag="01 — The company" title="A considered approach." italic="A lasting commitment."/>

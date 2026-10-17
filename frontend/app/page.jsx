@@ -73,16 +73,18 @@ export default function Home(){return <Motion>
         </ul>
         <div className="kx-intro-cta" data-reveal style={{'--d':'.26s'}}><Link href="/about/" className="kx-link">Our story <span>→</span></Link><Link href="/expertise/" className="kx-link">Our expertise <span>→</span></Link></div>
       </div>
-      <div className="kx-intro-media kx-mosaic">
-        {[['project-private-mansion','Mansions','/expertise/#villas','Private mansion lit at night'],
-          ['project-signature-villa','Luxury villas','/expertise/#villas','Contemporary white villa with landscaped garden'],
-          ['project-gutti','Residential buildings','/expertise/#residential','GUTTI residential building at night'],
-          ['project-como','Commercial buildings','/expertise/#commercial','COMO industrial business park building']].map(([img,label,href,alt],i)=>
-          <Link key={label} href={href} className={`kx-tile t${i}`} data-reveal="clip" data-cursor="view" style={{'--d':`${i*.12}s`}}>
-            <img src={`/images/${img}.jpg`} alt={alt} loading="lazy"/>
-            <span className="kx-tile-label"><small>0{i+1}</small>{label}<b>→</b></span>
-          </Link>)}
-      </div>
+    </div>
+    <div className="kx-bento">
+      {[['villa-sunset-5','Luxury villas','Sea-view homes with infinity pools','/expertise/#villas','Luxury villa with infinity pool facing the Dubai skyline at sunset'],
+        ['project-private-mansion','Mansions','Private estates, crafted in detail','/projects/private-mansion/','Private mansion lit at night with olive trees'],
+        ['apt-balcony-burj-al-arab','Waterfront residences','Living above the Gulf','/expertise/#residential','Residence balcony overlooking Burj Al Arab and the Dubai coastline'],
+        ['res-towers-beach','Residential buildings','Communities by the sea','/expertise/#residential','Residential towers along the beach at sunset'],
+        ['project-como','Commercial buildings','Spaces for business','/projects/como/','COMO industrial business park building']].map(([img,label,line,href,alt],i)=>
+        <Link key={label} href={href} className={`kx-bt b${i}`} data-reveal="clip" data-cursor="view" style={{'--d':`${i*.1}s`}}>
+          <img src={`/images/${img}.jpg`} alt={alt} loading="lazy"/>
+          <span className="kx-bt-no">0{i+1}</span>
+          <span className="kx-bt-label"><span><b>{label}</b><small>{line}</small></span><i>→</i></span>
+        </Link>)}
     </div>
   </section>
 

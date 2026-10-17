@@ -48,5 +48,5 @@ export default function Projects(){return <Motion>
     <div className="kx-accordion">{questions.map(([q,a],i)=><details key={q} open={i===0}><summary><span>0{i+1}</span><h3>{q}</h3><i aria-hidden="true"/></summary><p>{a}</p></details>)}</div>
   </section>
 
-  <KxClosing image="marina-skyline" alt="Dubai Marina towers rising above the sea"/>
+  <KxClosing image="dubai-marina-night" alt="Dubai Marina towers and yachts at dusk"/>
 </Motion>}

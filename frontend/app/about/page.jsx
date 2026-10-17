@@ -88,5 +88,5 @@ export default function About(){return <Motion>
     <p className="kx-note">Associated companies retain their individual legal identities and contractual responsibilities.</p>
   </section>
 
-  <KxClosing image="marina-sunset" alt="Dubai Marina at sunset" tag="The next chapter starts with you" title="Let’s build something" italic="extraordinary."/>
+  <KxClosing image="dubai-burj-fountain" alt="Burj Khalifa and the Dubai Fountain at sunset" tag="The next chapter starts with you" title="Let’s build something" italic="extraordinary."/>
 </Motion>}

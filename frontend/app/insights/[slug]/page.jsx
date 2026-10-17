@@ -32,6 +32,6 @@ export default async function Article({params}){
       </Link>)}</div>
     </section>
 
-    <KxClosing image="dubai-night-reflection" alt="Downtown Dubai reflected at night"/>
+    <KxClosing image="dubai-marina-mall" alt="Dubai Marina waterway at night"/>
   </Motion>;
 }

@@ -14,7 +14,7 @@ const places = [
 
 const residences = [
   {image:'project-private-mansion',title:'Private Mansion',place:'Mansions · Dubai',href:'/projects/private-mansion/',tags:['Stone & timber','Glass terraces','Night-lit garden'],text:'Warm stone and timber, cantilevered terraces and an illuminated entrance garden built around a sculptural olive tree.',alt:'Private mansion lit at night with terraces and olive trees'},
-  {image:'mansion-waterfront-1',title:'The Waterfront Mansion',place:'Mansions · Waterfront',href:'/expertise/#villas',tags:['Private jetty','Infinity pool','Stone terraces'],text:'A grand waterfront estate with layered stone terraces, an infinity pool and a private mooring — composed around the evening light on the water.',alt:'Grand waterfront mansion with infinity pool and private boat dock at sunset'},
+  {image:'mansion-waterfront-1',title:'The Waterfront Mansion',place:'Mansions · Waterfront',href:'/expertise/#waterfront',tags:['Private jetty','Infinity pool','Stone terraces'],text:'A grand waterfront estate with layered stone terraces, an infinity pool and a private mooring — composed around the evening light on the water.',alt:'Grand waterfront mansion with infinity pool and private boat dock at sunset'},
   {image:'mansion-waterfront-2',title:'The Signature Estate',place:'Villas & mansions · Waterfront',href:'/expertise/#villas',tags:['Double-height entrance','Waterfront terraces','Landscaped grounds'],text:'Classical proportions, a double-height arched entrance and glass-lined terraces that open the whole home towards the water.',alt:'Luxury waterfront villa with arched entrance, pool and yacht at sunset'},
   {image:'villa-sunset-1',title:'The Sea-View Villa',place:'Villas · Palm Jumeirah',href:'/expertise/#villas',tags:['Infinity edge','Skyline views','Indoor-outdoor living'],text:'An infinity pool that meets the horizon, with the Dubai skyline beyond and living spaces that open fully onto the terrace.',alt:'Sea-view villa with infinity pool facing the Dubai skyline at sunset'},
   {image:'res-towers-beach',title:'Luxury Residential Towers',place:'Residential buildings · Beachfront',href:'/expertise/#residential',tags:['Beachfront','Resort amenities','Glass balconies'],text:'Slender residential towers set along the shore, with deep glazed balconies, landscaped podiums and a resort-style pool deck.',alt:'Luxury residential towers along the beach at sunset'},
@@ -74,10 +74,10 @@ export default function Home(){return <Motion>
     </div>
     <div className="kx-pv-gallery">
       {[['villa-sunset-5','Luxury villas','/expertise/#villas','Luxury villa with infinity pool facing the Dubai skyline at sunset'],
-        ['project-private-mansion','Mansions','/projects/private-mansion/','Private mansion lit at night with olive trees'],
-        ['apt-balcony-burj-al-arab','Waterfront residences','/expertise/#residential','Residence balcony overlooking Burj Al Arab and the Dubai coastline'],
+        ['project-private-mansion','Mansions','/expertise/#mansions','Private mansion lit at night with olive trees'],
+        ['apt-balcony-burj-al-arab','Waterfront residences','/expertise/#waterfront','Residence balcony overlooking Burj Al Arab and the Dubai coastline'],
         ['res-towers-beach','Residential buildings','/expertise/#residential','Residential towers along the beach at sunset'],
-        ['project-como','Commercial buildings','/projects/como/','COMO industrial business park building']].map(([img,label,href,alt],i)=>
+        ['project-como','Commercial buildings','/expertise/#commercial','COMO industrial business park building']].map(([img,label,href,alt],i)=>
         <Link key={label} href={href} className={`kx-pc p${i}`} data-reveal="clip" data-cursor="view" style={{'--d':`${i*.08}s`}}>
           <img src={`/images/${img}.jpg`} alt={alt} loading="lazy"/>
           <span className="kx-pc-cap"><small>0{i+1}</small><b>{label}</b><i>→</i></span>
@@ -164,5 +164,5 @@ export default function Home(){return <Motion>
     <p className="kx-note">Photography is illustrative architectural and Dubai imagery and does not depict verified KEA projects.</p>
   </section>
 
-  <KxClosing image="dubai-night-reflection" alt="Downtown Dubai and Burj Khalifa reflected in the water at night"/>
+  <KxClosing image="dubai-palm-island" alt="Palm Jumeirah and Atlantis at sunset"/>
 </Motion>}

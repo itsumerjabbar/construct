@@ -25,5 +25,5 @@ export default function Insights(){const [lead,...rest]=articles;return <Motion>
     <p className="kx-note">Insights are editorial perspectives, not news announcements. Photography is illustrative.</p>
   </section>
 
-  <KxClosing image="marina-sunset" alt="Dubai Marina at sunset" tag="Have a project in mind?" title="Let’s talk about" italic="your vision."/>
+  <KxClosing image="dubai-burj-al-arab-beach" alt="Burj Al Arab seen from Jumeirah beach at sunset" tag="Have a project in mind?" title="Let’s talk about" italic="your vision."/>
 </Motion>}

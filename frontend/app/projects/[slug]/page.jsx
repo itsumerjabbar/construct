@@ -60,6 +60,6 @@ export default async function Project({params}){
       <p className="kx-note">Imagery is illustrative. Detailed project photography, scope and delivery information will be added when approved.</p>
     </section>
 
-    <KxClosing image={p.category==='Commercial'?'dubai-night-reflection':'villa-sunset-3'}/>
+    <KxClosing image="palm-jumeirah-fronds-dusk" alt="Palm Jumeirah villas at sunset"/>
   </Motion>;
 }

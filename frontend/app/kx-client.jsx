@@ -106,7 +106,7 @@ export function ProjectGallery(){
   const [filter,setFilter]=useState('All projects');
   const list=projects.filter(p=>filter==='All projects'||p.category===filter);
   return <>
-    <div className="kx-filters" aria-label="Filter projects">{['All projects','Mansions & villas','Residential','Commercial'].map(f=><button key={f} onClick={()=>setFilter(f)} aria-pressed={f===filter} className={f===filter?'is-on':''}>{f}<span>{f==='All projects'?'06':`0${projects.filter(p=>p.category===f).length}`}</span></button>)}</div>
+    <div className="kx-filters" aria-label="Filter projects">{['All projects','Mansions & villas','Residential','Commercial'].map(f=><button key={f} onClick={()=>setFilter(f)} aria-pressed={f===filter} className={f===filter?'is-on':''}>{f}<span>{String(f==='All projects'?projects.length:projects.filter(p=>p.category===f).length).padStart(2,'0')}</span></button>)}</div>
     <div className="kx-gallery" aria-live="polite" key={filter}>{list.map(p=><KxProjectCard key={p.slug} project={p} index={projects.indexOf(p)}/>)}</div>
   </>;
 }

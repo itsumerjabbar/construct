@@ -9,17 +9,17 @@ export function generateStaticParams(){return projects.map(p=>({slug:p.slug}))}
 export async function generateMetadata({params}){const {slug}=await params;return {title:projects.find(p=>p.slug===slug)?.title||'Project'}}
 
 const moods={
-  'Mansions & villas':['luxury-interior','palm-atlantis','master-suite'],
-  'Residential':['residence','marina-sunset','interior'],
-  'Commercial':['tower','dubai-night-reflection','dubai-downtown'],
+  'Mansions & villas':['luxury-interior','project-beachfront-villa','master-suite'],
+  'Residential':['project-residential-building','project-gutti','interior'],
+  'Commercial':['project-mosque','project-como','dubai-downtown'],
 };
 
 export default async function Project({params}){
   const {slug}=await params;const p=projects.find(x=>x.slug===slug);if(!p)notFound();
-  const n=narratives[p.slug];const index=projects.indexOf(p);
+  const n=narratives[p.narrative]||narratives[p.slug];const index=projects.indexOf(p);
   const related=projects.filter(x=>x.slug!==p.slug).sort((a,b)=>Number(b.category===p.category)-Number(a.category===p.category)).slice(0,2);
   return <Motion>
-    <KxHero crumb={<Link href="/projects/">Projects</Link>} tag={`${p.category} · ${p.location}`} title={p.title} italic={p.name} image={p.image} alt="Illustrative architectural reference" size="detail"/>
+    <KxHero crumb={<Link href="/projects/">Projects</Link>} tag={`${p.category} · ${p.location}`} title={p.title} italic={{'Mansions & villas':'A private residence.','Residential':'A place to call home.','Commercial':'Built for purpose.'}[p.category]} image={p.image} alt="Illustrative architectural reference" size="detail"/>
 
     <section className="kx-wrap kx-detail" id="content">
       <div className="kx-facts" data-reveal>

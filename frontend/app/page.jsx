@@ -6,17 +6,17 @@ import './home.css';
 
 const places = [
   {image:'dubai-downtown',name:'Downtown',line:'Skyline views',text:'Residences with a front-row seat to the world’s most famous skyline.',href:'/projects/',alt:'Burj Khalifa rising above Downtown Dubai and palm trees'},
-  {image:'palm-atlantis',name:'Palm Jumeirah',line:'Island living',text:'Signature villas on the world’s most famous island, steps from the sea.',href:'/projects/palm-jumeirah/',alt:'Atlantis The Palm and the beach at The Pointe, Palm Jumeirah'},
+  {image:'palm-atlantis',name:'Palm Jumeirah',line:'Island living',text:'Signature villas on the world’s most famous island, steps from the sea.',href:'/projects/',alt:'Atlantis The Palm and the beach at The Pointe, Palm Jumeirah'},
   {image:'burj-al-arab',name:'Jumeirah Coast',line:'Life by the sea',text:'Waterfront living where every room opens towards the Arabian Gulf.',href:'/projects/',alt:'Aerial view of Burj Al Arab on the Jumeirah coastline'},
-  {image:'lagoon-aerial',name:'The Lagoons',line:'Turquoise retreats',text:'Lagoon-inspired living, shaped around water, light and calm.',href:'/projects/damac-lagoons/',alt:'Villas set over a turquoise lagoon'},
+  {image:'lagoon-aerial',name:'The Lagoons',line:'Turquoise retreats',text:'Lagoon-inspired living, shaped around water, light and calm.',href:'/projects/',alt:'Villas set over a turquoise lagoon'},
   {image:'marina-skyline',name:'Dubai Marina',line:'City by the water',text:'Vertical living along the marina, where the city meets the shoreline.',href:'/projects/',alt:'Dubai Marina towers rising above the sea'},
 ];
 
 const residences = [
-  {image:'palm-villas',title:'The Palm Villa',place:'Palm Jumeirah',href:'/projects/palm-jumeirah/',tags:['Private beach','Frond living','Sea horizon'],text:'A home on the fronds of the Palm — a private beach, calm water and uninterrupted views across the Gulf.',alt:'Villas along the water on a frond of Palm Jumeirah'},
-  {image:'lagoon-villas',title:'The Lagoon Residence',place:'Inspired by DAMAC Lagoons',href:'/projects/damac-lagoons/',tags:['Turquoise water','Private jetty','Island calm'],text:'Architecture in dialogue with water. Light, reflection and calm shape every space of a lagoon-side home.',alt:'Villas over a turquoise lagoon'},
-  {image:'mansion-infinity',title:'The Infinity Mansion',place:'MBR City',href:'/projects/mbr-city/',tags:['Stone & timber','Cantilevered terraces','Infinity pool'],text:'Bold volumes, natural stone and glass. A private estate where structural ambition meets meticulous finishing.',alt:'Modern mansion with infinity pool'},
-  {image:'villa-al-barari',title:'The Garden Villa',place:'Al Barari · Dubai',href:'/projects/mbr-city/',tags:['Lakeside','Landscaped grounds','Contemporary white'],text:'A contemporary villa set among water and greenery — proof that Dubai luxury can be as calm as it is bold.',alt:'Contemporary white villa beside a lake in Al Barari, Dubai'},
+  {image:'project-signature-villa',title:'Signature Villa',place:'Mansions & villas · Dubai',href:'/projects/signature-villa/',tags:['Contemporary facade','Reflecting pools','Landscaped courtyard'],text:'A contemporary white facade with dark stone volumes, full-height glazing and a sculpted garden of olive trees and water.',alt:'Contemporary white villa with dark stone volumes and landscaped garden'},
+  {image:'project-private-mansion',title:'Private Mansion',place:'Mansions & villas · Dubai',href:'/projects/private-mansion/',tags:['Stone & timber','Glass terraces','Night-lit garden'],text:'Warm stone and timber, cantilevered terraces and an illuminated entrance garden built around a sculptural olive tree.',alt:'Private mansion lit at night with terraces and olive trees'},
+  {image:'project-contemporary-villa',title:'Contemporary Villa',place:'Mansions & villas · Dubai',href:'/projects/contemporary-villa/',tags:['Sun-shelf pool','Linear lighting','Sliding glass'],text:'Layered cantilevers and integrated lighting, with floor-to-ceiling glass opening onto a sun-shelf pool.',alt:'Modern villa at night with illuminated cantilevers and pool'},
+  {image:'project-beachfront-villa',title:'Beachfront Villa',place:'Mansions & villas · Dubai',href:'/projects/beachfront-villa/',tags:['Infinity edge','On the beach','Sea views'],text:'An infinity-edge pool running along the shoreline, with stone terraces and glazing framing the sea.',alt:'Beachfront villa with infinity pool beside the sea'},
 ];
 
 const lagoonPoints = [
@@ -74,10 +74,10 @@ export default function Home(){return <Motion>
         <div className="kx-intro-cta" data-reveal style={{'--d':'.26s'}}><Link href="/about/" className="kx-link">Our story <span>→</span></Link><Link href="/expertise/" className="kx-link">Our expertise <span>→</span></Link></div>
       </div>
       <div className="kx-intro-media kx-mosaic">
-        {[['mansion-infinity','Mansions','/expertise/#villas','Contemporary mansion with stone cladding and an infinity pool'],
-          ['villa','Luxury villas','/expertise/#villas','White modern villa with landscaped terraces and a pool'],
-          ['tower-night','Residential buildings','/expertise/#residential','Residential tower lit at dusk in Dubai'],
-          ['dubai-downtown','Commercial buildings','/expertise/#commercial','Downtown Dubai commercial towers and Burj Khalifa']].map(([img,label,href,alt],i)=>
+        {[['project-private-mansion','Mansions','/expertise/#villas','Private mansion lit at night'],
+          ['project-signature-villa','Luxury villas','/expertise/#villas','Contemporary white villa with landscaped garden'],
+          ['project-gutti','Residential buildings','/expertise/#residential','GUTTI residential building at night'],
+          ['project-como','Commercial buildings','/expertise/#commercial','COMO industrial business park building']].map(([img,label,href,alt],i)=>
           <Link key={label} href={href} className={`kx-tile t${i}`} data-reveal="clip" data-cursor="view" style={{'--d':`${i*.12}s`}}>
             <img src={`/images/${img}.jpg`} alt={alt} loading="lazy"/>
             <span className="kx-tile-label"><small>0{i+1}</small>{label}<b>→</b></span>
@@ -96,7 +96,7 @@ export default function Home(){return <Motion>
 
   <ArchReveal image="palm-view" alt="View from Palm Jumeirah across the water to the Dubai Marina skyline" floats={seaFloats}
     intro={<><p className="kx-tag"><i/>Sea view living</p><h2>Life, framed <em>by the sea.</em></h2></>}
-    caption={<><span className="kx-tag light"><i/>Palm Jumeirah · Dubai Marina · Jumeirah Coast</span><b>Every residence should <em>frame a view.</em></b><span className="kx-arch-chips"><Link href="/projects/palm-jumeirah/">Palm Jumeirah villas</Link><Link href="/projects/">Marina residences</Link><Link href="/expertise/#villas">Waterfront expertise</Link></span></>}/>
+    caption={<><span className="kx-tag light"><i/>Palm Jumeirah · Dubai Marina · Jumeirah Coast</span><b>Every residence should <em>frame a view.</em></b><span className="kx-arch-chips"><Link href="/projects/beachfront-villa/">Beachfront villas</Link><Link href="/projects/">Marina residences</Link><Link href="/expertise/#villas">Waterfront expertise</Link></span></>}/>
 
   <section className="kx-places" id="destinations">
     <div className="kx-wrap"><KxHead tag="02 — Dubai, our canvas" title="A city of" italic="extraordinary addresses."><p>From the skyline to the shoreline, each setting asks for a different kind of home — and a builder who understands it.</p></KxHead></div>
@@ -124,7 +124,7 @@ export default function Home(){return <Motion>
       <div className="kx-glass" data-reveal style={{'--d':'.2s'}}>
         <h3>Turquoise calm, <em>carefully built.</em></h3>
         <p>Island-inspired communities — from DAMAC Lagoons to the new DAMAC Islands — bring water into everyday life. Waterside homes carry their own technical demands, and we bring the engineering discipline that lets the setting take centre stage.</p>
-        <Link href="/projects/damac-lagoons/" className="kx-link light">Lagoon villas <span>→</span></Link>
+        <Link href="/projects/beachfront-villa/" className="kx-link light">Waterfront villas <span>→</span></Link>
       </div>
       <figure className="kx-lagoon-thumb" data-reveal="clip" style={{'--d':'.3s'}}><img src="/images/lagoon-suite.jpg" alt="Suite opening onto a turquoise lagoon" loading="lazy"/></figure>
     </div>

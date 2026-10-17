@@ -6,7 +6,7 @@ import './home.css';
 
 const places = [
   {image:'dubai-burj-fountain',name:'Downtown',line:'Skyline views',text:'Residences with a front-row seat to the world’s most famous skyline.',href:'/projects/',alt:'Burj Khalifa rising above Downtown Dubai and palm trees'},
-  {image:'villa-sunset-3',name:'Palm Jumeirah',line:'Island living',text:'Signature villas on the world’s most famous island, steps from the sea.',href:'/projects/',alt:'Atlantis The Palm and the beach at The Pointe, Palm Jumeirah'},
+  {image:'palm-jumeirah-fronds-dusk',name:'Palm Jumeirah',line:'Island living',text:'Signature villas on the world’s most famous island, steps from the sea.',href:'/projects/',alt:'Aerial view of Palm Jumeirah villas and Atlantis at sunset'},
   {image:'dubai-burj-al-arab-beach',name:'Jumeirah Coast',line:'Life by the sea',text:'Waterfront living where every room opens towards the Arabian Gulf.',href:'/projects/',alt:'Aerial view of Burj Al Arab on the Jumeirah coastline'},
   {image:'lagoon-community',name:'The Lagoons',line:'Turquoise retreats',text:'Lagoon-inspired living, shaped around water, light and calm.',href:'/projects/',alt:'Villas set over a turquoise lagoon'},
   {image:'dubai-palm-marina-sunset',name:'Dubai Marina',line:'City by the water',text:'Vertical living along the marina, where the city meets the shoreline.',href:'/projects/',alt:'Palm Jumeirah and the Dubai Marina skyline at sunset'},

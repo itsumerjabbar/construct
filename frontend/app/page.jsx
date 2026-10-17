@@ -62,14 +62,14 @@ export default function Home(){return <Motion>
     <div className="kx-intro-grid">
       <div className="kx-intro-copy">
         <p className="kx-tag" data-reveal><i/>01 — The KEA perspective</p>
-        <h2 className="kx-intro-title" data-reveal>Luxury villa and mansion construction in Dubai, <em>built with quiet precision.</em></h2>
+        <h2 className="kx-intro-title kx-words" data-reveal>{'Luxury villa and mansion construction in Dubai,'.split(' ').map((w,i)=><span key={i} className="kx-w" style={{'--w':i}}><span>{w}</span></span>).reduce((a,x,i)=>i?[...a,' ',x]:[x],[])} <em>{'built with quiet precision.'.split(' ').map((w,i)=><span key={i} className="kx-w" style={{'--w':i+7}}><span>{w}</span></span>).reduce((a,x,i)=>i?[...a,' ',x]:[x],[])}</em></h2>
         <div className="kx-intro-text" data-reveal style={{'--d':'.12s'}}>
           <p className="kx-lead">KEA Building Contracting is a Dubai construction company for clients who expect more — more care in the detail, more clarity in the process and more confidence in the result.</p>
           <p>We build luxury mansions and signature villas, residential buildings and commercial projects across Dubai, with a focus on communities such as Palm Jumeirah, MBR City and DAMAC Lagoons, and residential work in Dubai South and Gutti developments.</p>
           <p>Every project brings engineering, project management, planning, QA/QC and HSE together under one accountable team — so architectural intent is protected from the first structural decision to the final finish.</p>
         </div>
         <ul className="kx-intro-list" data-reveal style={{'--d':'.2s'}}>
-          {['Luxury mansions','Signature villas','Waterfront homes','Residential buildings','Commercial construction'].map(t=><li key={t}>{t}</li>)}
+          {['Luxury mansions','Signature villas','Waterfront homes','Residential buildings','Commercial construction'].map((t,i)=><li key={t} style={{'--t':i}}>{t}</li>)}
         </ul>
         <div className="kx-intro-cta" data-reveal style={{'--d':'.26s'}}><Link href="/about/" className="kx-link">Our story <span>→</span></Link><Link href="/expertise/" className="kx-link">Our expertise <span>→</span></Link></div>
       </div>
@@ -80,9 +80,9 @@ export default function Home(){return <Motion>
         ['apt-balcony-burj-al-arab','Waterfront residences','Living above the Gulf','/expertise/#residential','Residence balcony overlooking Burj Al Arab and the Dubai coastline'],
         ['res-towers-beach','Residential buildings','Communities by the sea','/expertise/#residential','Residential towers along the beach at sunset'],
         ['project-como','Commercial buildings','Spaces for business','/projects/como/','COMO industrial business park building']].map(([img,label,line,href,alt],i)=>
-        <Link key={label} href={href} className={`kx-bt b${i}`} data-reveal="clip" data-cursor="view" style={{'--d':`${i*.1}s`}}>
+        <Link key={label} href={href} className={`kx-bt b${i}`} data-reveal="clip" data-tilt data-cursor="view" style={{'--d':`${i*.1}s`}}>
           <img src={`/images/${img}.jpg`} alt={alt} loading="lazy"/>
-          <span className="kx-bt-no">0{i+1}</span>
+          <span className="kx-bt-shine" aria-hidden="true"/><span className="kx-bt-no">0{i+1}</span>
           <span className="kx-bt-label"><span><b>{label}</b><small>{line}</small></span><i>→</i></span>
         </Link>)}
     </div>

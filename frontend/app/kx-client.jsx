@@ -154,7 +154,10 @@ export function Motion({children,className=''}){
     function setup(){teardown();if(media.matches)return;el.classList.add('kx-motion');
       io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-in');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -6% 0px'});reveals.forEach(r=>io.observe(r));
       counter=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){countUp(e.target);counter.unobserve(e.target)}}),{threshold:.7});counts.forEach(n=>{n.textContent='00';counter.observe(n)});
-      addEventListener('scroll',schedule,{passive:true});addEventListener('resize',schedule);update()}
+      addEventListener('scroll',schedule,{passive:true});addEventListener('resize',schedule);update();
+      if(matchMedia('(hover: hover) and (pointer: fine)').matches)el.querySelectorAll('[data-tilt]').forEach(t=>{
+        t.onmousemove=e=>{const r=t.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;t.style.setProperty('--rx',(-y*6).toFixed(2)+'deg');t.style.setProperty('--ry',(x*8).toFixed(2)+'deg');t.style.setProperty('--gx',((x+.5)*100).toFixed(1)+'%');t.style.setProperty('--gy',((y+.5)*100).toFixed(1)+'%')};
+        t.onmouseleave=()=>{t.style.setProperty('--rx','0deg');t.style.setProperty('--ry','0deg')}})}
     setup();media.addEventListener('change',setup);
     return()=>{teardown();media.removeEventListener('change',setup)};
   },[]);

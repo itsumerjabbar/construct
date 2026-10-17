@@ -341,3 +341,38 @@
   .kx-bento{grid-template-columns:1fr 1fr;grid-template-rows:none;grid-auto-rows:clamp(180px,34vw,280px);margin-top:56px}
   .kx-bt.b0{grid-column:1/-1;grid-row:span 1}.kx-bt.b1,.kx-bt.b2,.kx-bt.b3,.kx-bt.b4{grid-column:auto}}
 @media(max-width:560px){.kx-bento{gap:10px}.kx-bt-label{left:14px;right:14px;bottom:12px}.kx-bt-label small{display:none}.kx-bt-label i{width:30px;height:30px}.kx-bt-label b{font-size:17px}}
+
+/* KEA perspective — animation layer */
+.kx-w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
+.kx-w>span{display:inline-block}
+.kx-motion .kx-words.kx-words{opacity:1;transform:none}
+.kx-motion .kx-words .kx-w>span{transform:translateY(105%) rotate(4deg);transition:transform 1.1s var(--ease);transition-delay:calc(var(--w) * .06s)}
+.kx-motion .kx-words.is-in .kx-w>span{transform:none}
+.kx-intro-copy>.kx-tag i{transform-origin:left;transition:transform 1.2s var(--ease) .2s}
+.kx-motion .kx-intro-copy>.kx-tag:not(.is-in) i{transform:scaleX(0)}
+.kx-motion .kx-intro-list li{opacity:0;transform:translateY(14px) scale(.92);transition:opacity .6s,transform .8s var(--ease),background .4s,border-color .4s;transition-delay:calc(.25s + var(--t) * .08s)}
+.kx-motion .kx-intro-list.is-in li{opacity:1;transform:none}
+.kx-intro-list li:hover{background:var(--night);color:#fff;border-color:var(--night);transition-delay:0s}
+.kx-bento{perspective:1400px}
+.kx-bt{--rx:0deg;--ry:0deg;transform:rotateX(var(--rx)) rotateY(var(--ry));transform-style:preserve-3d;transition:transform .6s var(--ease),box-shadow .6s}
+.kx-bt:hover{box-shadow:0 40px 80px #0b1a1f40}
+.kx-bt img{scale:1;transition:scale 1.4s var(--ease)}
+.kx-bt:hover img{transform:none;scale:1.07}
+.kx-motion .kx-bt.is-in img{animation:kx-kb 16s ease-in-out 1.6s infinite alternate}
+.kx-bt:nth-child(2n).is-in img{animation-direction:alternate-reverse}
+@keyframes kx-kb{from{transform:scale(1.02) translate(0,0)}to{transform:scale(1.12) translate(-2%,-1.5%)}}
+.kx-bt-shine{position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(circle at var(--gx,50%) var(--gy,50%),#ffffff38,transparent 45%);opacity:0;transition:opacity .5s}
+.kx-bt:hover .kx-bt-shine{opacity:1}
+.kx-bt:before{content:'';position:absolute;z-index:3;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(120deg,transparent 30%,#e3c995 50%,transparent 70%) 0 0/250% 100%;-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .5s;pointer-events:none}
+.kx-bt:hover:before{opacity:1;animation:kx-border 2.2s linear infinite}
+@keyframes kx-border{to{background-position:-250% 0}}
+.kx-bt-label,.kx-bt-no{transition:transform .8s var(--ease),opacity .8s}
+.kx-motion .kx-bt:not(.is-in) .kx-bt-label{opacity:0;transform:translateY(24px)}
+.kx-motion .kx-bt:not(.is-in) .kx-bt-no{opacity:0;transform:translateY(-10px)}
+.kx-bt.is-in .kx-bt-label{transition-delay:calc(var(--d,0s) + .7s)}
+.kx-bt-label small{transition:transform .6s var(--ease),opacity .6s}
+.kx-bt:hover .kx-bt-label b{color:var(--gold-l);transition:color .4s}
+.kx-bt-label i{box-shadow:0 0 0 0 #e3c99580}
+.kx-bt:hover .kx-bt-label i{animation:kx-ping 1.4s ease-out infinite}
+@keyframes kx-ping{to{box-shadow:0 0 0 14px #e3c99500}}
+@media(prefers-reduced-motion:reduce){.kx-bt{transform:none!important}.kx-bt img{animation:none!important}}

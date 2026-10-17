@@ -1,15 +1,14 @@
 import Link from 'next/link';
 import { KxClosing } from '../kx-ui';
 import { Motion } from '../kx-client';
-import { projects } from '../data';
 import Collection from './collection';
 export const metadata={title:'Our projects'};
 
-export default function Projects(){const featured=projects.find(p=>p.slug==='private-mansion');return <Motion className="pr-page">
+export default function Projects(){return <Motion className="pr-page">
   <section className="pr-intro">
     <div className="pr-intro-top"><p className="kx-tag"><i/>The KEA portfolio</p><span className="pr-label">Dubai, United Arab Emirates</span></div>
     <div className="pr-title-row"><h1>Places of purpose.<br/><em>Details of distinction.</em></h1><div><p>Private sanctuaries. Contemporary communities. Spaces that bring people together.</p><a href="#portfolio" className="pr-text-link">Discover the collection <span>↓</span></a></div></div>
-    <Link href={`/projects/${featured.slug}/`} className="pr-cover" data-cursor="view"><img src={`/images/${featured.image}.jpg`} alt={featured.name} fetchPriority="high"/><span className="pr-cover-top">IN FOCUS <i/> {featured.category}</span><div className="pr-cover-bottom"><div><span className="pr-label">{featured.location}</span><h2>{featured.name}</h2></div><span className="pr-cover-action">Explore project <b>↗</b></span></div></Link>
+    
     <div className="pr-intro-foot"><span>A considered approach. A distinctive result.</span><a href="#portfolio">THE COLLECTION <span>↓</span></a></div>
   </section>
   <section className="pr-section pr-portfolio" id="portfolio">

@@ -26,8 +26,8 @@ export default function About(){return <Motion>
     <KxHead tag="01 — The company" title="A considered approach." italic="A lasting commitment."/>
     <div className="kx-story-grid">
       <div className="kx-collage">
-        <figure className="kx-collage-a" data-reveal="clip"><img src="/images/burj-sunset-pool.jpg" alt="Infinity pool terrace facing the Burj Khalifa and Downtown Dubai skyline at sunset" loading="lazy"/></figure>
-        <figure className="kx-collage-b" data-reveal="clip" style={{'--d':'.2s'}}><img src="/images/tower-night.jpg" alt="Contemporary residential tower lit at dusk in Dubai" loading="lazy"/></figure>
+        <figure className="kx-collage-a" data-reveal="clip"><img src="/images/project-private-mansion.jpg" alt="KEA Private Mansion lit at night" loading="lazy"/></figure>
+        <figure className="kx-collage-b" data-reveal="clip" style={{'--d':'.2s'}}><img src="/images/project-gutti.jpg" alt="GUTTI residential building by KEA" loading="lazy"/></figure>
         <div className="kx-spin-badge" aria-hidden="true"><svg viewBox="0 0 120 120"><defs><path id="kx-c2" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs><text><textPath href="#kx-c2">VISION · INTEGRITY · CRAFT · </textPath></text></svg><span>K.</span></div>
       </div>
       <div className="kx-prose" data-reveal>

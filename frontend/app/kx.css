@@ -661,3 +661,7 @@ footer.kx-foot>*{position:relative}
 /* About hero: keep the skyline in frame */
 .kx-ph.pos-skyline .kx-ph-frame img{object-position:50% 0%;transform:none;animation:none}
 @media(max-width:700px){.kx-ph.pos-skyline .kx-ph-frame img{object-position:46% 0%}}
+
+/* About section 1: theme-sized heading */
+.kx .kx-story .kx-head h2{font-size:clamp(34px,3.4vw,56px)}
+.kx-story .kx-head{margin-bottom:60px}

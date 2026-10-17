@@ -205,13 +205,10 @@
 .kx-arch.is-live .kx-arch-float{display:block;position:absolute;z-index:1;margin:0;width:clamp(150px,15vw,250px);aspect-ratio:4/5;border-radius:22px;overflow:hidden;box-shadow:0 30px 60px #0b1a1f30;opacity:calc(1 - var(--q) * 1.4);transition:opacity .2s}
 .kx-arch-float img{position:absolute;inset:0}
 .kx-arch-float figcaption{position:absolute;left:12px;bottom:12px;padding:6px 12px;border-radius:999px;background:#061217b3;color:#fff;font-size:10px;letter-spacing:.14em;text-transform:uppercase;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
-.kx-arch-float.f0{left:4vw;top:17vh;transform:translate(calc(var(--q) * -30vw),calc(var(--q) * -10vh)) rotate(-5deg)}
-.kx-arch-float.f1{left:19vw;top:22vh;width:clamp(100px,8.5vw,150px);transform:translate(calc(var(--q) * -36vw),calc(var(--q) * -14vh)) rotate(3deg)}
-.kx-arch-float.f2{left:17vw;top:46vh;width:clamp(120px,11vw,180px);transform:translate(calc(var(--q) * -32vw),0) rotate(4deg)}
-.kx-arch-float.f3{left:5vw;bottom:6vh;width:clamp(130px,12vw,200px);transform:translate(calc(var(--q) * -30vw),calc(var(--q) * 12vh)) rotate(-3deg)}
-.kx-arch-float.f4{right:4vw;top:16vh;transform:translate(calc(var(--q) * 30vw),calc(var(--q) * -10vh)) rotate(4deg)}
-.kx-arch-float.f5{right:18vw;top:44vh;width:clamp(120px,11vw,180px);transform:translate(calc(var(--q) * 32vw),0) rotate(-4deg)}
-.kx-arch-float.f6{right:6vw;bottom:6vh;width:clamp(130px,12vw,200px);transform:translate(calc(var(--q) * 30vw),calc(var(--q) * 12vh)) rotate(3deg)}
+.kx-arch-float.f0{left:7vw;top:22vh;transform:translate(calc(var(--q) * -30vw),calc(var(--q) * -10vh)) rotate(-5deg)}
+.kx-arch-float.f1{right:7vw;top:20vh;transform:translate(calc(var(--q) * 30vw),calc(var(--q) * -10vh)) rotate(4deg)}
+.kx-arch-float.f2{left:17vw;bottom:8vh;width:clamp(130px,12vw,200px);transform:translate(calc(var(--q) * -30vw),calc(var(--q) * 12vh)) rotate(3deg)}
+.kx-arch-float.f3{right:16vw;bottom:9vh;width:clamp(130px,12vw,200px);transform:translate(calc(var(--q) * 30vw),calc(var(--q) * 12vh)) rotate(-4deg)}
 
 /* 04 — Lagoon (calm, no ripple) */
 .kx-lagoon{position:relative;overflow:hidden;color:#fff;background:radial-gradient(120% 70% at 50% 0%,#11616b 0%,#0b3a43 42%,#07222a 100%);padding-bottom:150px}
@@ -256,7 +253,7 @@
   .kx-intro-media{max-width:560px}
   .kx-devs-grid{grid-template-columns:1fr 1fr}
   .kx-network ul{grid-template-columns:repeat(3,1fr)}
-  .kx-arch-float.f1,.kx-arch-float.f2,.kx-arch-float.f5{display:none!important}
+  .kx-arch-float.f2,.kx-arch-float.f3{display:none!important}
 }
 @media(max-width:900px){
   .kx-intro{padding-top:100px}

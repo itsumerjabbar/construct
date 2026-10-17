@@ -152,7 +152,7 @@ export default function Home(){return <Motion>
 
   <section className="kx-insights kx-wrap">
     <KxHead tag="08 — Journal" title="A closer" italic="perspective."><Link href="/insights/" className="kx-link">All insights <span>→</span></Link></KxHead>
-    <div className="kx-articles">{articles.map((a,i)=><Link href={`/insights/${a.slug}/`} key={a.slug} className="kx-article" data-reveal data-cursor="view" style={{'--d':`${i*.12}s`}}><div><img src={`/images/${a.image}.jpg`} alt={a.title} loading="lazy"/></div><small>{a.tag}</small><h3>{a.title}</h3></Link>)}</div>
+    <div className="kx-articles">{articles.slice(0,3).map((a,i)=><Link href={`/insights/${a.slug}/`} key={a.slug} className="kx-article" data-reveal data-cursor="view" style={{'--d':`${i*.12}s`}}><div><img src={`/images/${a.image}.jpg`} alt={a.title} loading="lazy"/></div><small>{a.tag}</small><h3>{a.title}</h3></Link>)}</div>
     <p className="kx-note">Photography is illustrative architectural and Dubai imagery and does not depict verified KEA projects.</p>
   </section>
 

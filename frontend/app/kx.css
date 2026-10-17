@@ -673,3 +673,5 @@ footer.kx-foot>*{position:relative}
 .kx p.kx-hero-title{line-height:.98}
 .kx-hero p.kx-hero-title em,.kx p.kx-ph-title em{color:var(--gold-l)}
 .kx .kx-faq-head h2{font-size:clamp(34px,3.4vw,56px);margin-bottom:24px}
+
+.kx .pd-faq{background:var(--mist)}

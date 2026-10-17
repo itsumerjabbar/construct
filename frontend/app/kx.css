@@ -693,3 +693,11 @@ footer.kx-foot>*{position:relative}
 .kx-read-related a span{grid-row:2;grid-column:2;color:var(--gold);font-family:var(--kx-sans),sans-serif}
 .kx-read-related a:hover{border-color:var(--gold);transform:translateX(6px)}
 .kx-read-side .kx-read-links li{display:block;padding:0;border:0}
+
+/* Form: spam trap + states */
+.hp-field{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden}
+.inquiry-form{position:relative}
+.inquiry-form button[disabled]{opacity:.6;cursor:wait}
+.kx .form-status.sent{border-left-color:#3d9a6e;background:#e7f4ec}
+.kx .form-status.error{border-left-color:#c0563f;background:#fbecE8;color:#7a2e1f}
+.kx .form-bottom p a{color:var(--gold);text-decoration:underline}

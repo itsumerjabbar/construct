@@ -45,7 +45,7 @@ const seaFloats = [
   {image:'apt-balcony-palm',label:'Sea-view terrace'},
 ];
 
-export const metadata = pageMeta({title:'Construction Company in Dubai | Luxury Villa & Mansion Contractors | KEA',absoluteTitle:true,description:'Construction company in Dubai for luxury villas, mansions, waterfront homes, residential and commercial buildings. KEA Building Contracting: 04 326 1339.',path:'/',image:'dubai-palm-aerial-hd'});
+export const metadata = pageMeta({title:'Construction Company in Dubai | Luxury Villa Contractors | KEA',absoluteTitle:true,description:'Construction company in Dubai for luxury villas, mansions, waterfront homes, residential and commercial buildings. KEA Building Contracting: 04 326 1339.',path:'/',image:'dubai-palm-aerial-hd'});
 
 export default function Home(){return <Motion>
   <JsonLd data={[{'@type':'WebPage','@id':abs('/'),url:abs('/'),name:'KEA Building Contracting — Construction Company in Dubai',about:orgRef,isPartOf:{'@id':abs('/#website')}},faqSchema(homeFaqs)]}/>

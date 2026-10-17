@@ -12,7 +12,8 @@ export function generateStaticParams(){return projects.map(p=>({slug:p.slug}))}
 export async function generateMetadata({params}){
   const {slug}=await params;const p=projects.find(x=>x.slug===slug);if(!p)return {};
   const c=sectorContent[p.category];
-  return pageMeta({title:`${p.title} | ${c.short} Dubai | KEA`,absoluteTitle:true,description:`${p.title} by KEA Building Contracting — ${c.keyword.toLowerCase()}. ${p.text}`.slice(0,150).replace(/\s\S*$/,'')+'…',path:`/projects/${p.slug}/`,image:p.image});
+  const kw={'Mansions & villas':'Villa Construction Dubai','Residential':'Residential Construction Dubai','Commercial':'Commercial Construction Dubai'}[p.category];const base=`${p.title} | ${kw}`;
+  return pageMeta({title:base.length<=54?`${base} | KEA`:base,absoluteTitle:true,description:`${p.title} by KEA Building Contracting — ${c.keyword.toLowerCase()}. ${p.text}`.slice(0,150).replace(/\s\S*$/,'')+'…',path:`/projects/${p.slug}/`,image:p.image});
 }
 
 export default async function Project({params}){

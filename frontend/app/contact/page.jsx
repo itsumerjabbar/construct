@@ -3,7 +3,7 @@ import { KxHero } from '../kx-ui';
 import { Motion } from '../kx-client';
 import { contact } from '../data';
 import { pageMeta, JsonLd, breadcrumb, orgRef, abs } from '../seo';
-export const metadata=pageMeta({title:'Contact KEA Building Contracting | Construction Company in Business Bay, Dubai',absoluteTitle:true,description:'Contact KEA Building Contracting, Office 802, Iris Bay Tower, Business Bay, Dubai. Call 04 326 1339 or email info@construct.ae about your project.',path:'/contact/',image:'villa-sunset-2-hd'});
+export const metadata=pageMeta({title:'Contact KEA | Construction Company in Business Bay, Dubai',absoluteTitle:true,description:'Contact KEA Building Contracting, Office 802, Iris Bay Tower, Business Bay, Dubai. Call 04 326 1339 or email info@construct.ae about your project.',path:'/contact/',image:'villa-sunset-2-hd'});
 
 
 export default function Contact(){return <Motion>

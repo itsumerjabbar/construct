@@ -17,7 +17,7 @@ const disciplines=[
   {title:'QA/QC',text:'Material reviews, inspections and close attention to workmanship at every stage.',image:'luxury-interior'},
   {title:'HSE',text:'Health, safety and environmental care built into everyday site planning.',image:'palm-villas'},
 ];
-const steps=[['Introduce yourself','Prepare your profile with the form below.'],['Share it with us','Send it once recruitment contact details are published.'],['A conversation','We review experience against current and upcoming needs.'],['Your next chapter','Join a team building some of Dubai’s finest places.']];
+const steps=[['Introduce yourself','Complete your profile with the form below.'],['Share it with us','Submit the form to send your details to hr@construct.ae.'],['A conversation','We review experience against current and upcoming needs.'],['Your next chapter','Join a team building some of Dubai’s finest places.']];
 
 export default function Careers(){return <Motion>
   <JsonLd data={[breadcrumb([['Home','/'],['Careers','/careers/']])]}/>
@@ -58,7 +58,7 @@ export default function Careers(){return <Motion>
       <div data-reveal>
         <p className="kx-tag"><i/>Express your interest</p>
         <h2>Your next chapter <em>could begin here.</em></h2>
-        <p>Introduce your experience and the contribution you would like to make. Your profile is prepared on your device so you can share it when recruitment contact details become available.</p>
+        <p>Introduce your experience and the contribution you would like to make. Submit the form to send your profile directly to hr@construct.ae. Our HR team can review your experience against suitable opportunities.</p>
       </div>
       <div className="kx-place-card" data-reveal style={{'--d':'.1s'}}>
         <img src="/images/palm-evening.jpg" alt="" loading="lazy"/>

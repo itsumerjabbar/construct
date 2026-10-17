@@ -1,6 +1,6 @@
 # KEA Building Contracting
 
-A responsive, multi-page Next.js App Router website with static export.
+A responsive, multi-page Next.js App Router website with a Node.js email endpoint.
 
 ## Local development
 
@@ -9,9 +9,17 @@ npm install
 npm run dev
 ```
 
-Visit http://localhost:3000. Build with `npm run build`; deploy the generated `out/` directory to a static host. Use `npm start` to preview the production export locally.
+Visit http://localhost:3000. Build with `npm run build`, then run `npm start`. Production requires a Node.js Next.js host with SMTP access. Static hosting of `out/` cannot run the email forms. The existing `.openai/hosting.json` describes the older static Sites deployment, not the current Node.js application; do not deploy an old `out/` directory as this version.
 
-Development uses `.next-dev/`; production builds use `.next/` and export to `out/`. These directories must remain separate so a build cannot overwrite a running development server's bundles.
+Development uses `.next-dev/`; production builds use `.next/`. These directories must remain separate so a build cannot overwrite a running development server's bundles.
+
+## Email delivery
+
+Nodemailer is installed. All project inquiry forms POST to `/api/inquiry/` and send to **info@construct.ae**. Career profiles use the same endpoint and send to **hr@construct.ae**. These recipients are fixed server-side; visitors cannot choose another recipient. The visitor's address is used as Reply-To, not as the sender.
+
+Set `SMTP_HOST`, `SMTP_PORT`, `SMTP_SECURE`, `SMTP_USER`, `SMTP_PASS` and an authorised `MAIL_FROM` in `.env.local` or the production host's environment. Never commit credentials. Port 465 normally uses `SMTP_SECURE=true`; port 587 normally uses STARTTLS with `SMTP_SECURE=false`. Restart the server after changing credentials.
+
+Placeholder passwords are rejected. Success is shown only after the SMTP server accepts the destination; acceptance does not guarantee inbox placement. The configured mail domain needs appropriate SPF/DKIM/DMARC settings and provider permissions. Server-side validation, a honeypot and a per-instance IP throttle are included; production infrastructure must overwrite forwarding headers, and multi-instance deployments should use a shared rate limiter.
 
 ## Content and components
 
@@ -37,7 +45,7 @@ Development uses `.next-dev/`; production builds use `.next/` and export to `out
 - Approve the proposed CEO message, vision and mission; add the CEO's confirmed name and portrait if desired.
 - Confirm legal entity, official contact information, developer relationships and company descriptions.
 - Approve legal copy for the final operating website.
-- Connect forms to an approved delivery endpoint. Current forms validate input and download a local text file; they do not send data or imply successful submission.
+- Configure and verify production SMTP credentials before accepting form submissions. Career profiles contain the form fields and a profile URL; CV file attachments are not currently included.
 - Add actual vacancies and dated company news as available. Current insights are editorial perspectives, not invented news announcements.
 
 No analytics, tracking scripts or client-side data persistence are included.

@@ -14,7 +14,7 @@ export function pageMeta({ title, description, path = '/', image = 'dubai-skylin
     title: absoluteTitle ? { absolute: title } : title,
     description,
     alternates: { canonical: path },
-    openGraph: { type, url: path, siteName: SITE_NAME, locale: 'en_AE', title: ogTitle, description, images: [{ url: img, width: 2560, height: 1448, alt: title }] },
+    openGraph: { type, url: path, siteName: SITE_NAME, locale: 'en_AE', title: ogTitle, description, images: [{ url: img, alt: title }] },
     twitter: { card: 'summary_large_image', title: ogTitle, description, images: [img] },
   };
 }
@@ -56,5 +56,5 @@ export function faqSchema(faqs) {
 
 export function JsonLd({ data }) {
   const json = Array.isArray(data) ? { '@context': 'https://schema.org', '@graph': data } : { '@context': 'https://schema.org', ...data };
-  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(json) }} />;
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(json).replace(/</g, '\\u003c') }} />;
 }

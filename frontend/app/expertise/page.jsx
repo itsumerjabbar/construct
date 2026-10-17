@@ -4,7 +4,7 @@ import { Motion, HoverList } from '../kx-client';
 import { capabilities, steps, craftImages } from '../data';
 import { pageMeta, JsonLd, breadcrumb, faqSchema, orgRef, abs } from '../seo';
 import { expertiseFaqs } from '../faqs';
-export const metadata=pageMeta({title:'Construction Services in Dubai | Villas, Mansions, Residential & Commercial',absoluteTitle:true,description:'Construction services in Dubai: luxury villa and mansion construction, waterfront homes, residential buildings and commercial buildings by KEA.',path:'/expertise/',image:'dubai-palm-aerial-hd'});
+export const metadata=pageMeta({title:'Construction Services in Dubai | Villas & Buildings | KEA',absoluteTitle:true,description:'Construction services in Dubai: luxury villa and mansion construction, waterfront homes, residential buildings and commercial buildings by KEA.',path:'/expertise/',image:'dubai-palm-aerial-hd'});
 
 const sectors=[
   {id:'villas',pill:'Luxury villas',seo:'Luxury villa construction in Dubai',title:'Luxury villa',italic:'construction',sub:'Sea-view homes, crafted around the way you live.',text:'From Palm Jumeirah to MBR City and DAMAC Lagoons, we build contemporary villas with infinity pools, full-height glazing and terraces that open onto the view — combining technical coordination with close attention to architectural detail, materials and workmanship.',image:'villa-sunset-5',inset:'project-signature-villa',tags:['Sea-view villas','Infinity pools','Specialist finishes'],alt:'Luxury villa with infinity pool facing the Dubai skyline at sunset'},

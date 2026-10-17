@@ -121,3 +121,12 @@
   .pd-contact a,.pd-contact span{font-size:17px}
 }
 .kx .pd-scope .kx-head h2,.kx .pd-more-head h2{font-size:clamp(34px,3.4vw,56px)}
+
+/* Projects page inquiry extras */
+.pr-inq-types{list-style:none;margin:0 0 34px;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.pr-inq-types li{padding:9px 16px;border-radius:999px;border:1px solid #ffffff2e;background:#ffffff0d;font-size:12px;color:#ffffffd9}
+.pr-inq-steps{list-style:none;margin:0 0 34px;padding:0;display:grid;gap:14px}
+.pr-inq-steps li{display:flex;gap:18px;align-items:flex-start}
+.pr-inq-steps span{flex:none;width:40px;height:40px;border-radius:50%;border:1px solid var(--gold-l);display:grid;place-items:center;font-size:11px;color:var(--gold-l)}
+.pr-inq-steps b{display:block;font-family:var(--display);font-weight:400;font-size:20px;color:#fff}
+.pr-inq-steps small{font-size:13px;color:#ffffffa6}

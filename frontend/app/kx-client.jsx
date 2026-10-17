@@ -25,8 +25,8 @@ export function HeroDestinations({children}){
     <div className="kx-hero-media">{destinations.map((x,i)=><img key={x.image} className={i===active?'is-active':i===prev?'is-prev':''} src={`/images/${x.image}.jpg`} alt={i===active?x.alt:''} aria-hidden={i!==active} fetchPriority={i===0?'high':'auto'} loading={i===0?'eager':'lazy'}/>)}</div>
     <div className="kx-hero-shade"/>
     <div className="kx-hero-inner">
-      <p className="kx-tag kx-in" style={{'--d':'0s'}}><i/>Luxury villas · Mansions · Dubai</p>
-      <h1 className="kx-hero-title"><span className="kx-mask"><span style={{'--d':'.1s'}}>Where the city</span></span><span className="kx-mask"><em style={{'--d':'.25s'}}>meets the sea.</em></span></h1>
+      <h1 className="kx-tag kx-h1 kx-in" style={{'--d':'0s'}}><i/>Luxury villa & mansion construction company in Dubai</h1>
+      <p className="kx-hero-title"><span className="kx-mask"><span style={{'--d':'.1s'}}>Where the city</span></span><span className="kx-mask"><em style={{'--d':'.25s'}}>meets the sea.</em></span></p>
       <p className="kx-hero-lead kx-in" style={{'--d':'.45s'}}>Sea-view villas, waterfront residences and private mansions — engineered with precision and finished with the quiet confidence true luxury demands.</p>
       <div className="kx-hero-cta kx-in" style={{'--d':'.6s'}}><Link href="/projects/" className="kx-btn" data-cursor="view">Explore residences<span>→</span></Link><Link href="/contact/" className="kx-btn line">Private consultation</Link></div>
     </div>

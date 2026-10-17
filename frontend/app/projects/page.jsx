@@ -2,12 +2,15 @@ import Link from 'next/link';
 import { KxClosing } from '../kx-ui';
 import { Motion } from '../kx-client';
 import Collection from './collection';
-export const metadata={title:'Our projects'};
+import { projects } from '../data';
+import { pageMeta, JsonLd, breadcrumb, abs } from '../seo';
+export const metadata=pageMeta({title:'Construction Projects in Dubai | Villas, Mansions & Buildings by KEA',absoluteTitle:true,description:'Construction projects by KEA Building Contracting in Dubai: luxury villas, private mansions, waterfront homes, residential and commercial buildings.',path:'/projects/',image:'project-signature-villa'});
 
 export default function Projects(){return <Motion className="pr-page">
+  <JsonLd data={[{'@type':'CollectionPage',url:abs('/projects/'),name:'Construction projects in Dubai',mainEntity:{'@type':'ItemList',itemListElement:projects.map((p,i)=>({'@type':'ListItem',position:i+1,url:abs(`/projects/${p.slug}/`),name:p.name}))}},breadcrumb([['Home','/'],['Projects','/projects/']])]}/>
   <section className="pr-intro">
-    <div className="pr-intro-top"><p className="kx-tag"><i/>The KEA portfolio</p><span className="pr-label">Dubai, United Arab Emirates</span></div>
-    <div className="pr-title-row"><h1>Places of purpose.<br/><em>Details of distinction.</em></h1><div><p>Private sanctuaries. Contemporary communities. Spaces that bring people together.</p><a href="#portfolio" className="pr-text-link">Discover the collection <span>↓</span></a></div></div>
+    <div className="pr-intro-top"><h1 className="kx-tag kx-h1"><i/>Construction projects in Dubai</h1><span className="pr-label">Dubai, United Arab Emirates</span></div>
+    <div className="pr-title-row"><p className="pr-display-title">Places of purpose.<br/><em>Details of distinction.</em></p><div><p>Private sanctuaries. Contemporary communities. Spaces that bring people together.</p><a href="#portfolio" className="pr-text-link">Discover the collection <span>↓</span></a></div></div>
     
     <div className="pr-intro-foot"><span>A considered approach. A distinctive result.</span><a href="#portfolio">THE COLLECTION <span>↓</span></a></div>
   </section>

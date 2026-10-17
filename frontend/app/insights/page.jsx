@@ -2,10 +2,12 @@ import Link from 'next/link';
 import { KxHero, KxHead, KxClosing } from '../kx-ui';
 import { Motion } from '../kx-client';
 import { articles } from '../data';
-export const metadata={title:'News & insights'};
+import { pageMeta, JsonLd, breadcrumb, orgRef, abs } from '../seo';
+export const metadata=pageMeta({title:'Construction Insights & News | KEA Building Contracting Dubai',absoluteTitle:true,description:'Construction insights from KEA Building Contracting in Dubai: luxury villa detailing, engineering and planning, quality control and responsible site practice.',path:'/insights/',image:'dubai-burj-al-arab-beach-hd'});
 
 export default function Insights(){const [lead,...rest]=articles;return <Motion>
-  <KxHero tag="News & insights" title="Ideas worth building on." italic="Perspectives worth sharing." text="Thoughts on craftsmanship, engineering and the everyday decisions that shape exceptional places across Dubai." image="dubai-burj-al-arab-beach-hd" alt="Burj Al Arab seen from Jumeirah beach at sunset" foot="Craft · Engineering · On site"/>
+  <JsonLd data={[{'@type':'Blog',url:abs('/insights/'),name:'KEA Building Contracting insights',publisher:orgRef,blogPost:articles.map(a=>({'@type':'BlogPosting',headline:a.title,url:abs(`/insights/${a.slug}/`)}))},breadcrumb([['Home','/'],['Insights','/insights/']])]}/>
+  <KxHero tag="News & insights" h1="Construction insights from Dubai" title="Ideas worth building on." italic="Perspectives worth sharing." text="Thoughts on craftsmanship, engineering and the everyday decisions that shape exceptional places across Dubai." image="dubai-burj-al-arab-beach-hd" alt="Burj Al Arab seen from Jumeirah beach at sunset" foot="Craft · Engineering · On site"/>
 
   <section className="kx-wrap kx-journal" id="content">
     <KxHead tag="The journal" title="A closer" italic="perspective."><p>Editorial perspectives from the KEA team on what it takes to build well.</p></KxHead>

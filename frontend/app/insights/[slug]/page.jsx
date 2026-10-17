@@ -3,14 +3,16 @@ import { notFound } from 'next/navigation';
 import { articles } from '../../data';
 import { KxHero, KxHead, KxClosing } from '../../kx-ui';
 import { Motion } from '../../kx-client';
+import { pageMeta, JsonLd, breadcrumb, orgRef, abs } from '../../seo';
 
 export function generateStaticParams(){return articles.map(a=>({slug:a.slug}))}
-export async function generateMetadata({params}){const {slug}=await params;return {title:articles.find(a=>a.slug===slug)?.title||'Insight'}}
+export async function generateMetadata({params}){const {slug}=await params;const a=articles.find(x=>x.slug===slug);if(!a)return {};return pageMeta({title:a.title,description:(a.intro+' '+a.sections[0][1]).slice(0,150).replace(/\s\S*$/,'')+'…',path:`/insights/${a.slug}/`,image:a.image,type:'article'})}
 
 export default async function Article({params}){
   const {slug}=await params;const a=articles.find(x=>x.slug===slug);if(!a)notFound();
   const more=articles.filter(x=>x.slug!==a.slug);
   return <Motion>
+    <JsonLd data={[{'@type':'BlogPosting',headline:a.title,description:a.intro,image:abs(`/images/${a.image}.jpg`),url:abs(`/insights/${a.slug}/`),mainEntityOfPage:abs(`/insights/${a.slug}/`),author:orgRef,publisher:orgRef,articleSection:a.tag,inLanguage:'en'},breadcrumb([['Home','/'],['Insights','/insights/'],[a.title,`/insights/${a.slug}/`]])]}/>
     <KxHero crumb={<Link href="/insights/">Insights</Link>} tag={`${a.tag} · KEA perspectives`} title={a.title} text={a.intro} image={a.image} alt="Illustrative architectural photograph" size="detail" foot="KEA perspectives"/>
 
     <article className="kx-wrap kx-read" id="content">

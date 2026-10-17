@@ -64,3 +64,9 @@ body:has(.pr-page) .header nav.open{color:#fff}
 .pr-card:hover .pr-card-description:after{transform:scaleX(1)}
 @media(max-width:600px){.pr-filters{border-radius:22px}.pr-card-image{border-radius:18px}.pr-card-frame{inset:8px;border-radius:12px}}
 @media(prefers-reduced-motion:reduce){.pr-card,.pr-card-image>img{animation:none!important;clip-path:none}}
+
+/* SEO: display headline is a styled paragraph; H1 is the keyword label */
+.kx.pr-page .pr-title-row .pr-display-title{font-family:var(--kx-display),Georgia,serif;font-weight:400;color:var(--pr-dark,#0b1a1f);font-size:clamp(46px,5.6vw,88px);line-height:1.04;letter-spacing:-.045em;margin:0}
+.kx.pr-page .pr-title-row .pr-display-title em{font-style:italic}
+@media(max-width:1000px){.kx.pr-page .pr-title-row .pr-display-title{font-size:58px}}
+@media(max-width:700px){.kx.pr-page .pr-title-row .pr-display-title{font-size:clamp(40px,11vw,52px)}}

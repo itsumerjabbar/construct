@@ -2,7 +2,9 @@ import Link from 'next/link';
 import { KxHero, KxHead, KxClosing } from '../kx-ui';
 import { Motion, HoverList } from '../kx-client';
 import { companies } from '../data';
-export const metadata={title:'About us'};
+import { pageMeta, JsonLd, breadcrumb, orgRef, abs } from '../seo';
+export const metadata=pageMeta({title:'About KEA Building Contracting | Construction Company in Dubai',absoluteTitle:true,description:'About KEA Building Contracting, a Dubai construction company for luxury villas, mansions, residential and commercial buildings. Meet our team, values and CEO.',path:'/about/',image:'dubai-skyline-reflection-hd'});
+const aboutSchema=[{'@type':'AboutPage','@id':abs('/about/'),url:abs('/about/'),name:'About KEA Building Contracting',about:orgRef,mainEntity:orgRef},{'@type':'Person',name:'Mohamad Fariz Harmouch',jobTitle:'Chief Executive Officer',worksFor:orgRef},breadcrumb([['Home','/'],['About us','/about/']])];
 
 const principles=[
   ['Integrity in the conversation','Trust grows through clarity. We value direct communication, realistic discussions about scope and responsibilities, and a shared understanding of what a project needs.'],
@@ -20,7 +22,8 @@ const disciplines=[
 const networkImages=['villa-sunset-3','luxury-interior','palm-villas','master-suite','dubai-downtown'];
 
 export default function About(){return <Motion>
-  <KxHero foot="Vision · Integrity · Craft" tag="Our story" title="Built on conviction." italic="Defined by craft." text="A construction partner for ambitious visions and places that stand the test of time — from private shoreline villas to the developments shaping Dubai." image="dubai-skyline-reflection-hd" alt="Dubai skyline and Burj Khalifa reflected in the water at dusk" size="pos-skyline"/>
+  <JsonLd data={aboutSchema}/>
+  <KxHero foot="Vision · Integrity · Craft" tag="Our story" h1="About KEA Building Contracting · Dubai" title="Built on conviction." italic="Defined by craft." text="A construction partner for ambitious visions and places that stand the test of time — from private shoreline villas to the developments shaping Dubai." image="dubai-skyline-reflection-hd" alt="Dubai skyline and Burj Khalifa reflected in the water at dusk" size="pos-skyline"/>
 
   <section className="kx-wrap kx-story" id="content">
     <KxHead tag="01 — The company" title="A considered approach." italic="A lasting commitment."/>

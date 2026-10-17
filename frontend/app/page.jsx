@@ -3,6 +3,8 @@ import { HeroDestinations, ArchReveal, StackCards, HoverList, Motion } from './k
 import { KxHead, KxClosing } from './kx-ui';
 import { capabilities, companies, articles, steps, craftImages, stats } from './data';
 import './home.css';
+import { pageMeta, JsonLd, faqSchema, orgRef, abs } from './seo';
+import { homeFaqs } from './faqs';
 
 const places = [
   {image:'dubai-burj-fountain',name:'Downtown',line:'Skyline views',text:'Residences with a front-row seat to the world’s most famous skyline.',href:'/projects/',alt:'Burj Khalifa rising above Downtown Dubai and palm trees'},
@@ -43,20 +45,10 @@ const seaFloats = [
   {image:'apt-balcony-palm',label:'Sea-view terrace'},
 ];
 
-export const metadata = {
-  title: { absolute: 'KEA Building Contracting | Luxury Villa & Mansion Construction in Dubai' },
-  description: 'KEA Building Contracting is a Dubai construction company delivering luxury mansions, signature villas, residential buildings and commercial projects — from Palm Jumeirah and MBR City to DAMAC Lagoons.',
-};
-
-const orgSchema = {
-  '@context':'https://schema.org','@type':'GeneralContractor',name:'KEA Building Contracting',
-  description:'Construction company in Dubai delivering luxury mansions, signature villas, residential buildings and commercial construction.',
-  areaServed:{'@type':'City',name:'Dubai'},telephone:'+97143261339',email:'info@construct.ae',address:{'@type':'PostalAddress',streetAddress:'Office 802, Iris Bay Tower, Business Bay',addressLocality:'Dubai',addressCountry:'AE'},
-  knowsAbout:['Luxury villa construction','Mansion construction','Residential building construction','Commercial construction','Project management','QA/QC','HSE'],
-};
+export const metadata = pageMeta({title:'Construction Company in Dubai | Luxury Villa & Mansion Contractors | KEA',absoluteTitle:true,description:'Construction company in Dubai for luxury villas, mansions, waterfront homes, residential and commercial buildings. KEA Building Contracting: 04 326 1339.',path:'/',image:'dubai-palm-aerial-hd'});
 
 export default function Home(){return <Motion>
-  <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(orgSchema)}}/>
+  <JsonLd data={[{'@type':'WebPage','@id':abs('/'),url:abs('/'),name:'KEA Building Contracting — Construction Company in Dubai',about:orgRef,isPartOf:{'@id':abs('/#website')}},faqSchema(homeFaqs)]}/>
   <div className="kx-loader" aria-hidden="true"><div className="kx-loader-word">{'KEA'.split('').map((c,i)=><span key={i} className="kx-wave-l" style={{'--i':i}}>{c}</span>)}</div><div className="kx-loader-bar"><i/></div><small>Dubai · Luxury construction</small></div>
   <HeroDestinations/>
 
@@ -115,7 +107,7 @@ export default function Home(){return <Motion>
   <section className="kx-lagoon" id="lagoon">
     <div className="kx-lagoon-top kx-wrap">
       <p className="kx-tag light" data-reveal><i/>04 — Water as architecture</p>
-      <h2 className="kx-water-word" aria-label="Lagoon"><span>Lagoon</span></h2>
+      <p className="kx-water-word" aria-hidden="true"><span>Lagoon</span></p>
       <p className="kx-lagoon-sub" data-reveal>Island-inspired living <i/> Turquoise water <i/> Private shores</p>
     </div>
     <div className="kx-lagoon-stage kx-wrap">
@@ -160,8 +152,18 @@ export default function Home(){return <Motion>
 
   <section className="kx-insights kx-wrap">
     <KxHead tag="08 — Journal" title="A closer" italic="perspective."><Link href="/insights/" className="kx-link">All insights <span>→</span></Link></KxHead>
-    <div className="kx-articles">{articles.map((a,i)=><Link href={`/insights/${a.slug}/`} key={a.slug} className="kx-article" data-reveal data-cursor="view" style={{'--d':`${i*.12}s`}}><div><img src={`/images/${a.image}.jpg`} alt="" loading="lazy"/></div><small>{a.tag}</small><h3>{a.title}</h3></Link>)}</div>
+    <div className="kx-articles">{articles.map((a,i)=><Link href={`/insights/${a.slug}/`} key={a.slug} className="kx-article" data-reveal data-cursor="view" style={{'--d':`${i*.12}s`}}><div><img src={`/images/${a.image}.jpg`} alt={a.title} loading="lazy"/></div><small>{a.tag}</small><h3>{a.title}</h3></Link>)}</div>
     <p className="kx-note">Photography is illustrative architectural and Dubai imagery and does not depict verified KEA projects.</p>
+  </section>
+
+  <section className="kx-wrap kx-faq" id="faq">
+    <div className="kx-faq-head" data-reveal>
+      <p className="kx-tag"><i/>09 — Frequently asked questions</p>
+      <h2>Your construction questions, <em>answered.</em></h2>
+      <p>What clients most often ask when choosing a construction company in Dubai for a villa, mansion or building project.</p>
+      <Link href="/contact/" className="kx-link">Talk to our team <span>→</span></Link>
+    </div>
+    <div className="kx-accordion">{homeFaqs.map(([q,a],i)=><details key={q} open={i===0}><summary><span>0{i+1}</span><h3>{q}</h3><i aria-hidden="true"/></summary><p>{a}</p></details>)}</div>
   </section>
 
   <KxClosing image="dubai-palm-island" alt="Palm Jumeirah and Atlantis at sunset"/>

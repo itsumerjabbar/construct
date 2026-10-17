@@ -5,9 +5,11 @@ import { projects } from '../../data';
 import { KxClosing } from '../../kx-ui';
 import { Motion } from '../../kx-client';
 import { CollectionCard } from '../collection';
+import { pageMeta, JsonLd, breadcrumb, orgRef, abs } from '../../seo';
 
 export function generateStaticParams(){return projects.map(p=>({slug:p.slug}))}
-export async function generateMetadata({params}){const {slug}=await params;return {title:projects.find(p=>p.slug===slug)?.title||'Project'}}
+const kind={'Mansions & villas':'Luxury villa construction','Residential':'Residential building construction','Commercial':'Commercial building construction'};
+export async function generateMetadata({params}){const {slug}=await params;const p=projects.find(x=>x.slug===slug);if(!p)return {};return pageMeta({title:`${p.title} | ${kind[p.category]} Dubai | KEA`,absoluteTitle:true,description:`${p.title} by KEA Building Contracting, ${p.location}. ${p.text}`.slice(0,158).replace(/\s\S*$/,'')+'…',path:`/projects/${p.slug}/`,image:p.image})}
 
 export default async function Project({params}){
   const {slug}=await params;const p=projects.find(x=>x.slug===slug);if(!p)notFound();
@@ -15,6 +17,7 @@ export default async function Project({params}){
   const related=projects.filter(x=>x.slug!==p.slug).sort((a,b)=>Number(b.category===p.category)-Number(a.category===p.category)).slice(0,2);
   const next=projects[(index+1)%projects.length];
   return <Motion className="pr-page pr-detail-page">
+    <JsonLd data={[{'@type':'CreativeWork',name:p.title,description:p.text,image:abs(`/images/${p.image}.jpg`),url:abs(`/projects/${p.slug}/`),genre:kind[p.category],creator:orgRef,locationCreated:{'@type':'Place',name:p.location}},breadcrumb([['Home','/'],['Projects','/projects/'],[p.title,`/projects/${p.slug}/`]])]}/>
     <section className="pr-detail-header"><nav aria-label="Breadcrumb" className="pr-breadcrumb"><Link href="/projects/">← All projects</Link><span>{String(index+1).padStart(2,'0')} / {String(projects.length).padStart(2,'0')}</span></nav><div className="pr-detail-title"><div><p className="kx-tag"><i/>{p.category}</p><h1>{p.title}</h1></div><span className="pr-label">{p.location}</span></div></section>
     <figure className="pr-detail-hero"><img src={`/images/${p.image}.jpg`} alt={p.name} fetchPriority="high"/><figcaption><span>{p.name}</span><a href="#project-story">THE PROJECT STORY <span>↓</span></a></figcaption></figure>
     <section className="pr-section pr-story" id="project-story"><aside className="pr-facts"><span className="pr-label">PROJECT AT A GLANCE</span><dl><div><dt>Project</dt><dd>{p.name}</dd></div><div><dt>Location</dt><dd>{p.location}</dd></div><div><dt>Sector</dt><dd>{p.category}</dd></div><div><dt>Our capabilities</dt><dd>Engineering · Project management · Planning · QA/QC · HSE</dd></div></dl><Link href="/contact/" className="pr-text-link">Make an inquiry <span>↗</span></Link></aside><div className="pr-story-copy" data-reveal><p className="kx-tag"><i/>The project perspective</p><h2>{p.name}.<br/><em>Considered in every detail.</em></h2><p className="pr-lead">{p.text}</p><p>Our delivery capabilities bring together engineering, project management, planning, QA/QC and HSE to support a considered construction process.</p></div></section>

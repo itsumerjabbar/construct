@@ -406,3 +406,8 @@
 .kx-pc:hover .kx-pc-cap i{transform:translateX(4px)}
 @media(max-width:1000px){.kx-pv{grid-template-columns:1fr;gap:56px}.kx-pv-gallery{grid-template-rows:repeat(3,clamp(150px,30vw,220px))}}
 @media(max-width:560px){.kx-pv-gallery{gap:10px}.kx-pc-cap{left:14px;right:14px;bottom:12px}.kx-pc-cap small{display:none}.kx-pc-cap b{font-size:15px}}
+
+.kx .kx-water-word{font-family:var(--display);font-weight:400}
+.kx p.kx-hero-title{font-size:clamp(52px,6.4vw,112px);margin:26px 0 30px;letter-spacing:-.03em;text-shadow:0 4px 50px #0006}
+@media(max-width:900px){.kx p.kx-hero-title{font-size:clamp(46px,12.5vw,88px);margin:20px 0 24px}}
+@media(max-width:400px){.kx p.kx-hero-title{font-size:clamp(42px,13vw,56px)}}

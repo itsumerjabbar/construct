@@ -2,11 +2,13 @@ import { InquiryForm } from '../ui';
 import { KxHero } from '../kx-ui';
 import { Motion } from '../kx-client';
 import { contact } from '../data';
-export const metadata={title:'Contact us'};
+import { pageMeta, JsonLd, breadcrumb, orgRef, abs } from '../seo';
+export const metadata=pageMeta({title:'Contact KEA Building Contracting | Construction Company in Business Bay, Dubai',absoluteTitle:true,description:'Contact KEA Building Contracting, Office 802, Iris Bay Tower, Business Bay, Dubai. Call 04 326 1339 or email info@construct.ae about your project.',path:'/contact/',image:'villa-sunset-2-hd'});
 
 
 export default function Contact(){return <Motion>
-  <KxHero foot="Private consultations across Dubai" tag="Start a conversation" title="Every great project" italic="starts with a conversation." text="A private residence by the sea. A new development. A vision waiting to take shape." image="villa-sunset-2-hd" alt="Luxury villa terrace and pool overlooking the sea and Dubai skyline at sunset" size="short"/>
+  <JsonLd data={[{'@type':'ContactPage',url:abs('/contact/'),name:'Contact KEA Building Contracting',about:orgRef},breadcrumb([['Home','/'],['Contact','/contact/']])]}/>
+  <KxHero foot="Private consultations across Dubai" tag="Start a conversation" h1="Contact our construction team in Dubai" title="Every great project" italic="starts with a conversation." text="A private residence by the sea. A new development. A vision waiting to take shape." image="villa-sunset-2-hd" alt="Luxury villa terrace and pool overlooking the sea and Dubai skyline at sunset" size="short"/>
 
   <section className="kx-wrap kx-contact" id="content">
     <aside className="kx-contact-side">

@@ -11,13 +11,14 @@ export function Waves({ className = '' }) {
   </div>;
 }
 
-export function KxHero({ tag, title, italic, text, image, alt = '', crumb, size = '', foot = 'Luxury construction · Dubai', children }) {
+export function KxHero({ tag, h1, title, italic, text, image, alt = '', crumb, size = '', foot = 'Luxury construction · Dubai', children }) {
+  const Title = h1 ? 'p' : 'h1';
   return <section className={`kx-ph ${size}`}>
     <div className="kx-ph-top">
       <div className="kx-ph-head">
         {crumb && <nav className="kx-crumb kx-in" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span>{crumb}</nav>}
-        <p className="kx-tag kx-in"><i/>{tag}</p>
-        <h1 className="kx-ph-title"><span className="kx-mask"><span style={{ '--d': '.1s' }}>{title}</span></span>{italic && <span className="kx-mask"><em style={{ '--d': '.25s' }}>{italic}</em></span>}</h1>
+        {h1 ? <h1 className="kx-tag kx-h1 kx-in"><i/>{h1}</h1> : <p className="kx-tag kx-in"><i/>{tag}</p>}
+        <Title className="kx-ph-title"><span className="kx-mask"><span style={{ '--d': '.1s' }}>{title}</span></span>{italic && <span className="kx-mask"><em style={{ '--d': '.25s' }}>{italic}</em></span>}</Title>
       </div>
       <div className="kx-ph-side kx-in" style={{ '--d': '.4s' }}>
         {text && <p className="kx-ph-text">{text}</p>}

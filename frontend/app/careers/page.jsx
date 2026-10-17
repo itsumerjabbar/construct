@@ -1,7 +1,8 @@
 import { InquiryForm } from '../ui';
 import { KxHero, KxHead } from '../kx-ui';
 import { Motion, HoverList } from '../kx-client';
-export const metadata={title:'Careers',description:'Build a construction career in Dubai with KEA Building Contracting — engineering, project management, planning, QA/QC and HSE on luxury villas, residential and commercial projects.'};
+import { pageMeta, JsonLd, breadcrumb } from '../seo';
+export const metadata=pageMeta({title:'Construction Careers in Dubai | Jobs at KEA Building Contracting',absoluteTitle:true,description:'Construction jobs in Dubai at KEA Building Contracting: engineering, project management, planning, QA/QC and HSE roles on villa and building projects.',path:'/careers/',image:'dubai-burj-fountain-dusk-hd'});
 
 const reasons=[
   ['Meaningful projects','Luxury mansions, signature villas, residential buildings and commercial spaces across some of Dubai’s most recognisable communities.'],
@@ -19,7 +20,8 @@ const disciplines=[
 const steps=[['Introduce yourself','Prepare your profile with the form below.'],['Share it with us','Send it once recruitment contact details are published.'],['A conversation','We review experience against current and upcoming needs.'],['Your next chapter','Join a team building some of Dubai’s finest places.']];
 
 export default function Careers(){return <Motion>
-  <KxHero tag="Careers at KEA" title="Build places that matter." italic="Build a career with purpose." text="For engineers, planners and site professionals who care about the quality of their work — and the team beside them." image="dubai-burj-fountain-dusk-hd" alt="Burj Khalifa and the Dubai Fountain at dusk" size="pos-skyline" foot="Engineering · Delivery · Craft">
+  <JsonLd data={[breadcrumb([['Home','/'],['Careers','/careers/']])]}/>
+  <KxHero tag="Careers at KEA" h1="Construction careers in Dubai" title="Build places that matter." italic="Build a career with purpose." text="For engineers, planners and site professionals who care about the quality of their work — and the team beside them." image="dubai-burj-fountain-dusk-hd" alt="Burj Khalifa and the Dubai Fountain at dusk" size="pos-skyline" foot="Engineering · Delivery · Craft">
     <a href="#apply" className="kx-btn">Express your interest<span>→</span></a>
   </KxHero>
 

@@ -49,7 +49,7 @@ export default function About(){return <Motion>
       <blockquote>Our responsibility is more than building well. <em>It is earning trust, every step of the way.</em></blockquote>
       <p>We see every project as an opportunity to translate a client’s ambition into something lasting. That responsibility calls for thoughtful planning, clear communication and care in execution.</p>
       <p>As Dubai continues to evolve, the opportunities to create meaningful places are extraordinary. Our vision is to build relationships as carefully as we build spaces.</p>
-      <div className="kx-sign"><b>The CEO’s office</b><span>KEA Building Contracting</span></div>
+      <div className="kx-sign"><b>Mohamad Fariz Harmouch</b><span>Chief Executive Officer · KEA Building Contracting</span></div>
       <small className="kx-draft">Proposed message for CEO approval.</small>
     </div>
   </section>

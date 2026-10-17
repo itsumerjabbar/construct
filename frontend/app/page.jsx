@@ -35,10 +35,13 @@ const developers = [
 ];
 
 const seaFloats = [
-  {image:'villa-sunset-2',label:'Sea-view villa'},
-  {image:'marina-skyline',label:'Dubai Marina'},
-  {image:'palm-atlantis',label:'The Pointe'},
-  {image:'marina-sunset',label:'Marina at dusk'},
+  {image:'dubai-palm-island',label:'Palm Jumeirah'},
+  {image:'dubai-burj-al-arab-beach',label:'Jumeirah Beach'},
+  {image:'lagoon-community',label:'Lagoon living'},
+  {image:'dubai-burj-fountain',label:'Downtown'},
+  {image:'dubai-palm-fronds',label:'Palm villas'},
+  {image:'res-towers-beach',label:'Beachfront towers'},
+  {image:'apt-balcony-palm',label:'Sea-view terrace'},
 ];
 
 export const metadata = {

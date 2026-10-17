@@ -8,6 +8,10 @@ export const abs = (path = '/') => `${SITE_URL}${path}`;
 
 /* Page metadata with canonical URL, Open Graph and Twitter card */
 export function pageMeta({ title, description, path = '/', image = 'dubai-skyline-reflection-hd', absoluteTitle = false, type = 'website' }) {
+  // Keep the company name explicit in search results and social previews.
+  const expandBrand = value => value.replace(/\bKEA\b(?!\s+(?:Building\s+)?Contracting\b)/gi, 'KEA Contracting');
+  title = expandBrand(title);
+  description = expandBrand(description);
   const img = abs(`/images/${image}.jpg`);
   const ogTitle = absoluteTitle ? title : `${title} | ${SITE_NAME}`;
   return {
@@ -27,7 +31,7 @@ export const siteSchema = {
       '@type': ['GeneralContractor', 'Organization'],
       '@id': ORG_ID,
       name: SITE_NAME,
-      alternateName: 'KEA',
+      alternateName: 'KEA Contracting',
       url: abs('/'),
       logo: abs('/icon.svg'),
       image: abs('/images/dubai-skyline-reflection-hd.jpg'),

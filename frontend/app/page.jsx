@@ -58,32 +58,35 @@ export default function Home(){return <Motion>
   <div className="kx-loader" aria-hidden="true"><div className="kx-loader-word">{'KEA'.split('').map((c,i)=><span key={i} className="kx-wave-l" style={{'--i':i}}>{c}</span>)}</div><div className="kx-loader-bar"><i/></div><small>Dubai · Luxury construction</small></div>
   <HeroDestinations/>
 
-  <section className="kx-intro kx-wrap" id="introduction">
-    <div className="kx-intro-grid">
-      <div className="kx-intro-copy">
-        <p className="kx-tag" data-reveal><i/>01 — The KEA perspective</p>
-        <h2 className="kx-intro-title kx-words" data-reveal>{'Luxury villa and mansion construction in Dubai,'.split(' ').map((w,i)=><span key={i} className="kx-w" style={{'--w':i}}><span>{w}</span></span>).reduce((a,x,i)=>i?[...a,' ',x]:[x],[])} <em>{'built with quiet precision.'.split(' ').map((w,i)=><span key={i} className="kx-w" style={{'--w':i+7}}><span>{w}</span></span>).reduce((a,x,i)=>i?[...a,' ',x]:[x],[])}</em></h2>
-        <div className="kx-intro-text" data-reveal style={{'--d':'.12s'}}>
-          <p className="kx-lead">KEA Building Contracting is a Dubai construction company for clients who expect more — more care in the detail, more clarity in the process and more confidence in the result.</p>
+  <section className="kx-pv" id="introduction">
+    <span className="kx-pv-num" aria-hidden="true">01</span>
+    <div className="kx-pv-head kx-wrap">
+      <p className="kx-pv-tag" data-reveal><i/><span>The KEA perspective</span><i/></p>
+      <h2 className="kx-pv-title kx-words" data-reveal>{'Luxury villa and mansion construction in Dubai,'.split(' ').map((w,i)=><span key={i} className="kx-w" style={{'--w':i}}><span>{w}</span></span>).reduce((a,x,i)=>i?[...a,' ',x]:[x],[])} <em>{'built with quiet precision.'.split(' ').map((w,i)=><span key={i} className="kx-w" style={{'--w':i+7}}><span>{w}</span></span>).reduce((a,x,i)=>i?[...a,' ',x]:[x],[])}</em></h2>
+      <div className="kx-pv-orn" aria-hidden="true" data-reveal><i/><b/><i/></div>
+      <div className="kx-pv-cols">
+        <p className="kx-pv-lead" data-reveal>KEA Building Contracting is a Dubai construction company for clients who expect more — more care in the detail, more clarity in the process and more confidence in the result.</p>
+        <div className="kx-pv-body" data-reveal style={{'--d':'.12s'}}>
           <p>We build luxury mansions and signature villas, residential buildings and commercial projects across Dubai, with a focus on communities such as Palm Jumeirah, MBR City and DAMAC Lagoons, and residential work in Dubai South and Gutti developments.</p>
           <p>Every project brings engineering, project management, planning, QA/QC and HSE together under one accountable team — so architectural intent is protected from the first structural decision to the final finish.</p>
+          <div className="kx-pv-cta"><Link href="/about/" className="kx-link">Our story <span>→</span></Link><Link href="/expertise/" className="kx-link">Our expertise <span>→</span></Link></div>
         </div>
-        <ul className="kx-intro-list" data-reveal style={{'--d':'.2s'}}>
-          {['Luxury mansions','Signature villas','Waterfront homes','Residential buildings','Commercial construction'].map((t,i)=><li key={t} style={{'--t':i}}>{t}</li>)}
-        </ul>
-        <div className="kx-intro-cta" data-reveal style={{'--d':'.26s'}}><Link href="/about/" className="kx-link">Our story <span>→</span></Link><Link href="/expertise/" className="kx-link">Our expertise <span>→</span></Link></div>
       </div>
+      <ul className="kx-pv-list" data-reveal>{['Luxury mansions','Signature villas','Waterfront homes','Residential buildings','Commercial construction'].map((t,i)=><li key={t} style={{'--t':i}}>{t}</li>)}</ul>
     </div>
-    <div className="kx-bento">
+    <div className="kx-pv-gallery kx-wrap">
       {[['villa-sunset-5','Luxury villas','Sea-view homes with infinity pools','/expertise/#villas','Luxury villa with infinity pool facing the Dubai skyline at sunset'],
         ['project-private-mansion','Mansions','Private estates, crafted in detail','/projects/private-mansion/','Private mansion lit at night with olive trees'],
         ['apt-balcony-burj-al-arab','Waterfront residences','Living above the Gulf','/expertise/#residential','Residence balcony overlooking Burj Al Arab and the Dubai coastline'],
         ['res-towers-beach','Residential buildings','Communities by the sea','/expertise/#residential','Residential towers along the beach at sunset'],
-        ['project-como','Commercial buildings','Spaces for business','/projects/como/','COMO industrial business park building']].map(([img,label,line,href,alt],i)=>
-        <Link key={label} href={href} className={`kx-bt b${i}`} data-reveal="clip" data-tilt data-cursor="view" style={{'--d':`${i*.1}s`}}>
-          <img src={`/images/${img}.jpg`} alt={alt} loading="lazy"/>
-          <span className="kx-bt-shine" aria-hidden="true"/><span className="kx-bt-no">0{i+1}</span>
-          <span className="kx-bt-label"><span><b>{label}</b><small>{line}</small></span><i>→</i></span>
+        ['project-como','Commercial buildings','Spaces built for business','/projects/como/','COMO industrial business park building']].map(([img,label,line,href,alt],i)=>
+        <Link key={label} href={href} className={`kx-pc p${i}`} data-cursor="view">
+          <figure data-reveal="clip" style={{'--d':`${i*.08}s`}}><img src={`/images/${img}.jpg`} alt={alt} loading="lazy"/></figure>
+          <div className="kx-pc-cap" data-reveal style={{'--d':`${.2+i*.08}s`}}>
+            <span className="kx-pc-no">0{i+1}</span>
+            <div><h3>{label}</h3><p>{line}</p></div>
+            <span className="kx-pc-go">Discover<i/></span>
+          </div>
         </Link>)}
     </div>
   </section>

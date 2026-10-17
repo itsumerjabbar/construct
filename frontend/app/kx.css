@@ -657,3 +657,7 @@ footer.kx-foot>*{position:relative}
 .kx-sector-copy>.kx-sector-no{font-size:clamp(110px,12vw,190px);top:-80px}
 .kx .kx-sector .kx-lead{font-size:clamp(19px,1.5vw,24px)!important}
 
+
+/* About hero: keep the skyline in frame */
+.kx-ph.pos-skyline .kx-ph-frame img{object-position:50% 0%;transform:none;animation:none}
+@media(max-width:700px){.kx-ph.pos-skyline .kx-ph-frame img{object-position:46% 0%}}

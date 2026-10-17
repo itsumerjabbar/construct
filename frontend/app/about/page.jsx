@@ -17,7 +17,7 @@ const disciplines=[
   ['QA/QC','Attention to material requirements, inspections and workmanship throughout the construction process.','◇'],
   ['HSE','Health, safety and environmental considerations as part of everyday site planning and execution.','⊕'],
 ];
-const networkImages=['mansion-infinity','luxury-interior','palm-villas','master-suite','dubai-downtown'];
+const networkImages=['villa-sunset-3','luxury-interior','palm-villas','master-suite','dubai-downtown'];
 
 export default function About(){return <Motion>
   <KxHero foot="Vision · Integrity · Craft" tag="Our story" title="Built on conviction." italic="Defined by craft." text="A construction partner for ambitious visions and places that stand the test of time — from private shoreline villas to the developments shaping Dubai." image="dubai-night-reflection" alt="Downtown Dubai and Burj Khalifa reflected in the water at night"/>

@@ -4,8 +4,8 @@ import { Motion, HoverList, ProjectGallery } from '../kx-client';
 export const metadata={title:'Our projects'};
 
 const locations=[
-  {title:'MBR City',text:'Bespoke private residences with an emphasis on architectural intent, proportion and the individual brief.',href:'/projects/#portfolio',image:'mansion-infinity'},
-  {title:'Palm Jumeirah',text:'Signature waterfront living, where interior spaces open towards the sea.',href:'/projects/#portfolio',image:'palm-atlantis'},
+  {title:'MBR City',text:'Bespoke private residences with an emphasis on architectural intent, proportion and the individual brief.',href:'/projects/#portfolio',image:'villa-sunset-2'},
+  {title:'Palm Jumeirah',text:'Signature waterfront living, where interior spaces open towards the sea.',href:'/projects/#portfolio',image:'villa-sunset-1'},
   {title:'DAMAC Lagoons',text:'Villa construction within a lagoon community, balancing individual homes with a consistent approach to delivery.',href:'/projects/#portfolio',image:'lagoon-villas'},
   {title:'Dubai South',text:'Residential buildings that bring together shared spaces, private living and coordination at building scale.',href:'/projects/#portfolio',image:'marina-skyline'},
   {title:'Gutti developments',text:'A residential focus with attention to civil works, technical interfaces and the finishing sequence.',href:'/projects/#portfolio',image:'villa-al-barari'},

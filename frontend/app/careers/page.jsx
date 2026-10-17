@@ -10,7 +10,7 @@ const reasons=[
   ['Room to grow','The chance to broaden your experience across project types, scales and disciplines.'],
 ];
 const disciplines=[
-  {title:'Engineering',text:'Coordinating technical interfaces and translating design intent into buildable detail.',image:'mansion-infinity'},
+  {title:'Engineering',text:'Coordinating technical interfaces and translating design intent into buildable detail.',image:'villa-sunset-5'},
   {title:'Project management',text:'Connecting people, programme and responsibilities from mobilisation to handover.',image:'marina-skyline'},
   {title:'Planning',text:'Sequencing, dependencies and milestones that keep the delivery picture clear.',image:'dubai-downtown'},
   {title:'QA/QC',text:'Material reviews, inspections and close attention to workmanship at every stage.',image:'luxury-interior'},

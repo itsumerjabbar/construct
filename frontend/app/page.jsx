@@ -6,7 +6,7 @@ import './home.css';
 
 const places = [
   {image:'dubai-downtown',name:'Downtown',line:'Skyline views',text:'Residences with a front-row seat to the world’s most famous skyline.',href:'/projects/',alt:'Burj Khalifa rising above Downtown Dubai and palm trees'},
-  {image:'palm-atlantis',name:'Palm Jumeirah',line:'Island living',text:'Signature villas on the world’s most famous island, steps from the sea.',href:'/projects/',alt:'Atlantis The Palm and the beach at The Pointe, Palm Jumeirah'},
+  {image:'villa-sunset-3',name:'Palm Jumeirah',line:'Island living',text:'Signature villas on the world’s most famous island, steps from the sea.',href:'/projects/',alt:'Atlantis The Palm and the beach at The Pointe, Palm Jumeirah'},
   {image:'burj-al-arab',name:'Jumeirah Coast',line:'Life by the sea',text:'Waterfront living where every room opens towards the Arabian Gulf.',href:'/projects/',alt:'Aerial view of Burj Al Arab on the Jumeirah coastline'},
   {image:'lagoon-aerial',name:'The Lagoons',line:'Turquoise retreats',text:'Lagoon-inspired living, shaped around water, light and calm.',href:'/projects/',alt:'Villas set over a turquoise lagoon'},
   {image:'marina-skyline',name:'Dubai Marina',line:'City by the water',text:'Vertical living along the marina, where the city meets the shoreline.',href:'/projects/',alt:'Dubai Marina towers rising above the sea'},
@@ -35,7 +35,7 @@ const developers = [
 ];
 
 const seaFloats = [
-  {image:'palm-evening',label:'Palm Jumeirah'},
+  {image:'villa-sunset-2',label:'Sea-view villa'},
   {image:'marina-skyline',label:'Dubai Marina'},
   {image:'palm-atlantis',label:'The Pointe'},
   {image:'marina-sunset',label:'Marina at dusk'},
@@ -94,7 +94,7 @@ export default function Home(){return <Motion>
     </div>)}</div>
   </section>
 
-  <ArchReveal image="palm-view" alt="View from Palm Jumeirah across the water to the Dubai Marina skyline" floats={seaFloats}
+  <ArchReveal image="villa-sunset-4" alt="Luxury villa terrace and infinity pool overlooking the sea and Dubai skyline at sunset" floats={seaFloats}
     intro={<><p className="kx-tag"><i/>Sea view living</p><h2>Life, framed <em>by the sea.</em></h2></>}
     caption={<><span className="kx-tag light"><i/>Palm Jumeirah · Dubai Marina · Jumeirah Coast</span><b>Every residence should <em>frame a view.</em></b><span className="kx-arch-chips"><Link href="/projects/beachfront-villa/">Beachfront villas</Link><Link href="/projects/">Marina residences</Link><Link href="/expertise/#villas">Waterfront expertise</Link></span></>}/>
 

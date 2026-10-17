@@ -9,7 +9,7 @@ export function generateStaticParams(){return projects.map(p=>({slug:p.slug}))}
 export async function generateMetadata({params}){const {slug}=await params;return {title:projects.find(p=>p.slug===slug)?.title||'Project'}}
 
 const moods={
-  'Mansions & villas':['luxury-interior','project-beachfront-villa','master-suite'],
+  'Mansions & villas':['luxury-interior','villa-sunset-4','master-suite'],
   'Residential':['project-residential-building','project-gutti','interior'],
   'Commercial':['project-mosque','project-como','dubai-downtown'],
 };
@@ -60,6 +60,6 @@ export default async function Project({params}){
       <p className="kx-note">Imagery is illustrative. Detailed project photography, scope and delivery information will be added when approved.</p>
     </section>
 
-    <KxClosing image={p.category==='Commercial'?'dubai-night-reflection':'jumeirah-sunset'}/>
+    <KxClosing image={p.category==='Commercial'?'dubai-night-reflection':'villa-sunset-3'}/>
   </Motion>;
 }

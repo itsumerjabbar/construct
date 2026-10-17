@@ -9,7 +9,7 @@ const reduced = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
 /* Home hero: destinations switch the backdrop with a circular wipe */
 const destinations = [
   {image:'dubai-skyline',label:'Downtown',line:'Skyline living',alt:'Dubai skyline with Burj Khalifa at sunset'},
-  {image:'palm-evening',label:'Palm Jumeirah',line:'Island living',alt:'Palm Jumeirah and Dubai Marina from above at dusk'},
+  {image:'villa-sunset-1',label:'Palm Jumeirah',line:'Sea-view villas',alt:'Luxury sea-view villa with infinity pool facing the Dubai skyline at sunset'},
   {image:'burj-al-arab',label:'Jumeirah Coast',line:'Life by the sea',alt:'Aerial view of Burj Al Arab surrounded by the Arabian Gulf'},
   {image:'marina-skyline',label:'Dubai Marina',line:'City by the water',alt:'Dubai Marina towers rising above the sea',bright:true},
 ];

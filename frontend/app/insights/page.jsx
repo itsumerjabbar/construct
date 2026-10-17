@@ -5,7 +5,7 @@ import { articles } from '../data';
 export const metadata={title:'News & insights'};
 
 export default function Insights(){const [lead,...rest]=articles;return <Motion>
-  <KxHero tag="News & insights" title="Ideas worth building on." italic="Perspectives worth sharing." text="Thoughts on craftsmanship, engineering and the everyday decisions that shape exceptional places across Dubai." image="dubai-burj-al-arab-beach" alt="Burj Al Arab seen from Jumeirah beach at sunset" foot="Craft · Engineering · On site"/>
+  <KxHero tag="News & insights" title="Ideas worth building on." italic="Perspectives worth sharing." text="Thoughts on craftsmanship, engineering and the everyday decisions that shape exceptional places across Dubai." image="dubai-burj-al-arab-beach-hd" alt="Burj Al Arab seen from Jumeirah beach at sunset" foot="Craft · Engineering · On site"/>
 
   <section className="kx-wrap kx-journal" id="content">
     <KxHead tag="The journal" title="A closer" italic="perspective."><p>Editorial perspectives from the KEA team on what it takes to build well.</p></KxHead>

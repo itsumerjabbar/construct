@@ -19,7 +19,7 @@ const disciplines=[
 const steps=[['Introduce yourself','Prepare your profile with the form below.'],['Share it with us','Send it once recruitment contact details are published.'],['A conversation','We review experience against current and upcoming needs.'],['Your next chapter','Join a team building some of Dubai’s finest places.']];
 
 export default function Careers(){return <Motion>
-  <KxHero tag="Careers at KEA" title="Build places that matter." italic="Build a career with purpose." text="For engineers, planners and site professionals who care about the quality of their work — and the team beside them." image="dubai-burj-fountain" alt="Burj Khalifa and the Dubai Fountain at sunset" foot="Engineering · Delivery · Craft">
+  <KxHero tag="Careers at KEA" title="Build places that matter." italic="Build a career with purpose." text="For engineers, planners and site professionals who care about the quality of their work — and the team beside them." image="dubai-burj-fountain-hd" alt="Burj Khalifa and the Dubai Fountain at sunset" foot="Engineering · Delivery · Craft">
     <a href="#apply" className="kx-btn">Express your interest<span>→</span></a>
   </KxHero>
 

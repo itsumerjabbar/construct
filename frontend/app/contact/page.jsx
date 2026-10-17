@@ -6,7 +6,7 @@ export const metadata={title:'Contact us'};
 
 
 export default function Contact(){return <Motion>
-  <KxHero foot="Private consultations across Dubai" tag="Start a conversation" title="Every great project" italic="starts with a conversation." text="A private residence by the sea. A new development. A vision waiting to take shape." image="villa-sunset-2" alt="Luxury villa terrace and pool overlooking the sea and Dubai skyline at sunset" size="short"/>
+  <KxHero foot="Private consultations across Dubai" tag="Start a conversation" title="Every great project" italic="starts with a conversation." text="A private residence by the sea. A new development. A vision waiting to take shape." image="villa-sunset-2-hd" alt="Luxury villa terrace and pool overlooking the sea and Dubai skyline at sunset" size="short"/>
 
   <section className="kx-wrap kx-contact" id="content">
     <aside className="kx-contact-side">

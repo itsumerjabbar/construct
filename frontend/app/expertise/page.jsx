@@ -14,7 +14,7 @@ const sectors=[
 const craft=capabilities.map(([t,p],i)=>({title:t,text:p,image:craftImages[i]}));
 
 export default function Expertise(){return <Motion>
-  <KxHero foot="Mansions · Residential · Commercial" tag="Our expertise" title="The vision is yours." italic="The commitment is ours." text="Five areas of expertise. One considered approach to construction — from the shoreline to the skyline." image="dubai-palm-aerial" alt="Aerial view of Palm Jumeirah and Atlantis at sunset">
+  <KxHero foot="Mansions · Residential · Commercial" tag="Our expertise" title="The vision is yours." italic="The commitment is ours." text="Five areas of expertise. One considered approach to construction — from the shoreline to the skyline." image="dubai-palm-aerial-hd" alt="Aerial view of Palm Jumeirah and Atlantis at sunset">
     <nav className="kx-pills" aria-label="Jump to an area of expertise">{sectors.map((s,i)=><a key={s.id} href={`#${s.id}`}><span>0{i+1}</span>{s.title} {s.italic}</a>)}</nav>
   </KxHero>
 
